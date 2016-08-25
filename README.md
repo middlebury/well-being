@@ -15,8 +15,8 @@ npm i -g sintaxi/harp#v0.21.0-pre
 Install dependencies (currently just browser-sync)
 ```
 npm install
-
 ```
+
 Run the Harp server with Browser sync
 ```bash
 npm run dev
