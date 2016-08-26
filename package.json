@@ -4,12 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "harp server --port 9001 & browser-sync start --proxy 'localhost:9001' --files '**/*.jade, **/*.scss, **/*.json, **/*.js, **/*.coffee' --no-notify --no-open",
+    "build-js ": "browserify public/js/main.js -o public/js/bundle.js",
+    "watch-js": "watchify public/js/main.js -o public/js/bundle.js -dv & browser-sync start --config bs-config.js",
+    "start": "harp server --port 9001 & npm run watch-js",
+    "compile": "npm run build-js && harp compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.14.0"
+    "browser-sync": "^2.14.0",
+    "browserify": "^13.1.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "animejs": "^1.1.0",
+    "waypoints": "^4.0.0"
   }
 }
