@@ -2,6 +2,6 @@ module.exports = {
   reloadDelay: 1000,
   open: false,
   notify: false,
-  files: ['**/*.jade', '**/*.scss', '**/*.json', '**/*.js'],
+  files: ['_site/**/*.html', '_site/**/*.scss', '_site/**/*.json', '_site/**/*.js'],
   proxy: 'localhost:9001'
 }
