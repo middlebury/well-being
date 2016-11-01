@@ -10,6 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var babelify = require('babelify');
 var browserSync = require('browser-sync');
 var cp = require('child_process');
+var beeper = require('beeper');
 
 // TODO: set up minification and sourcemaps for production only builds
 
@@ -42,6 +43,7 @@ gulp.task('scripts', function() {
   return b.bundle()
     .on('error', function(err) {
       console.error(err.message);
+      beeper();
       this.emit("end");
     })
     .pipe(source('bundle.js'))
@@ -54,6 +56,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./_site/js'));
 });
 
+// TODO: get styles to beep on sass error
 gulp.task('styles', function() {
   return gulp.src('_scss/main.scss')
     .pipe(sass({
