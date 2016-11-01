@@ -10,7 +10,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var babelify = require('babelify');
 var browserSync = require('browser-sync');
 var cp = require('child_process');
-var del = require('del');
 
 // TODO: set up minification and sourcemaps for production only builds
 
