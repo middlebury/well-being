@@ -10,23 +10,21 @@ var autoprefixer = require('gulp-autoprefixer');
 var babelify = require('babelify');
 var browserSync = require('browser-sync');
 var cp = require('child_process');
+var del = require('del');
 
-gulp.task('jekyll-build', function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-    .on('close', done);
+// TODO: set up minification and sourcemaps for production only builds
+
+gulp.task('jekyll-build', function(done) {
+  return cp.spawn('jekyll', ['build'], {
+    stdio: 'inherit'
+  }).on('close', done);
 });
 
-/**
- * Rebuild Jekyll & do page reload
- */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build'], function() {
   browserSync.reload();
 });
 
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', function() {
   browserSync({
     open: false,
     server: {
@@ -50,13 +48,10 @@ gulp.task('scripts', function() {
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(browserSync.reload({stream:true}))
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./_site/js'));
 });
 
-/**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
- */
-gulp.task('sass', function () {
+gulp.task('styles', function() {
   return gulp.src('_scss/main.scss')
     .pipe(sass({
       includePaths: ['scss'],
@@ -68,19 +63,12 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./css'));
 });
 
-
-/**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
- */
-gulp.task('watch', function () {
+gulp.task('watch', function() {
   gulp.watch('_js/*.js', ['scripts']);
-  gulp.watch('_scss/*.scss', ['sass']);
+  gulp.watch('_scss/*.scss', ['styles']);
   gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
- */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('build', ['jekyll-build', 'scripts', 'styles']);
+
+gulp.task('default', ['build', 'browser-sync', 'watch']);
