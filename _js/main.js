@@ -1,7 +1,7 @@
 var optimizedResize = require('./optimizedResize');
 
-var img = document.querySelector('img[data-video-src]');
-var container = img.parentElement;
+// var img = document.querySelector('img[data-video-src]');
+// var container = img.parentElement;
 var videoId = 'swapped-video';
 var isVideo = false;
 var video = null;
@@ -11,11 +11,12 @@ function isTablet() {
 }
 
 function swapImg() {
-  if(isTablet()) {
-    return insertVideo()
-  }
-
-  removeVideo();
+  console.log('test')
+  // if(isTablet()) {
+  //   return insertVideo()
+  // }
+  //
+  // removeVideo();
 }
 
 function createVideo(options) {
@@ -52,4 +53,4 @@ function removeVideo() {
   }
 }
 
-// optimizedResize.add(swapImg)
+optimizedResize.add(swapImg)
