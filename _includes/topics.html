@@ -1,0 +1,14 @@
+<p>You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
+<p>And we are here to help.</p>
+<nav>
+  <ul>
+    {% for topic in site.data.topics %}
+    <li>
+      <a href="#">
+        <strong>{{topic.title}}</strong>
+        <p>{{topic.summary}}</p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
