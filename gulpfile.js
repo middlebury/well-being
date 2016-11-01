@@ -40,6 +40,10 @@ gulp.task('scripts', function() {
   });
 
   return b.bundle()
+    .on('error', function(err) {
+      console.error(err.message);
+      this.emit("end");
+    })
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
@@ -55,7 +59,7 @@ gulp.task('styles', function() {
     .pipe(sass({
       includePaths: ['scss'],
       onError: browserSync.notify
-    }))
+    })).on('error', sass.logError)
     .pipe(autoprefixer(['last 2 versions'], { cascade: true }))
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
