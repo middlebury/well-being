@@ -9,3 +9,11 @@
 .section--hero {
 
 }
+
+.section--topics {
+  @include media(md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
