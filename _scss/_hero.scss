@@ -48,6 +48,7 @@ $button-rotation: 60deg;
 
   p {
     font-size: 18px;
+    font-weight: 300;
 
     @include media(md) {
       font-size: 20px;
