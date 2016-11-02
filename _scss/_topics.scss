@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  @include media(md) {
+  @include media(lg) {
     flex-direction: row;
     max-width: 1000px;
   }
@@ -11,19 +11,21 @@
 .topics__intro {
   padding: 30px;
 
-  @include media(md) {
+  @include media(lg) {
     order: 2;
   }
 
   p {
-    font-size: 18px;
+    font-size: 21px;
+    margin-bottom: 40px;
+    font-weight: 300;
   }
 }
 
 .topics-nav {
   order: 2;
 
-  @include media(md) {
+  @include media(lg) {
     order: 1;
     min-width: 400px;
   }
@@ -35,10 +37,6 @@
 
   li {
     list-style-type: none;
-
-    @include media(md) {
-      // margin-bottom: calc(20vh / 7);
-    }
   }
 
   a {
@@ -48,7 +46,7 @@
     display: block;
     border-top: 1px solid $color-secondary;
 
-    @include media(md) {
+    @include media(lg) {
       border-top: 0;
       border-right: 1px solid $color-secondary;
     }
