@@ -45,7 +45,7 @@ class Swapper {
   showItem(id) {
     if(!id) return;
     this.closeAll();
-    this.onOpen();
+    this.onOpen(id);
     const elem = document.getElementById(id);
     elem.style.display = 'block';
     this.setCurrIndex(id);
