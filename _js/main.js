@@ -1,56 +1,38 @@
-var optimizedResize = require('./optimizedResize');
+const Swapper = require('./swapper');
 
-// var img = document.querySelector('img[data-video-src]');
-// var container = img.parentElement;
-var videoId = 'swapped-video';
-var isVideo = false;
-var video = null;
+const intro = document.querySelector('.topics__intro');
+const controls = document.querySelector('.controls');
 
-function isTablet() {
-  return !window.matchMedia('(min-width: 768px)').matches;
-}
+const show = elem => elem.style.display = 'block';
+const hide = elem => elem.style.display = 'none';
 
-function swapImg() {
-  console.log('test')
-  // if(isTablet()) {
-  //   return insertVideo()
-  // }
-  //
-  // removeVideo();
-}
-
-function createVideo(options) {
-  var video = document.createElement('video')
-  video.poster = options.poster;
-  video.id = videoId;
-
-  var source = document.createElement('source')
-  source.src = options.source;
-
-  video.appendChild(source);
-
-  return video;
-}
-
-function insertVideo() {
-  var video = createVideo({
-    poster: img.src,
-    source: img.getAttribute('data-video-src')
-  });
-
-  if(img) {
-    container.removeChild(img)
-    container.appendChild(video)
+const swapper = new Swapper({
+  navItems: '.js-topics-nav-item',
+  items: '.js-topic-article',
+  onOpen() {
+    hide(intro);
+    show(controls);
+  },
+  onClose() {
+    show(intro);
+    hide(controls);
   }
-}
+});
 
-function removeVideo() {
-  var video = document.getElementById(videoId)
-  if(video) {
-    var parent = video.parentNode;
-    parent.removeChild(video);
-    parent.appendChild(img)
-  }
-}
+var closeBtn = document.querySelector('.controls__btn--close');
+var prevBtn = document.querySelector('.controls__btn--prev');
+var nextBtn = document.querySelector('.controls__btn--next');
 
-optimizedResize.add(swapImg)
+closeBtn.onclick = () => {
+  swapper.closeAll();
+};
+
+prevBtn.onclick = () => {
+  swapper.prev();
+};
+
+nextBtn.onclick = () => {
+  swapper.next();
+};
+
+swapper.init();
