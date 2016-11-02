@@ -34,7 +34,7 @@ class Swapper {
 
     if(href) {
       const id = href.replace('#', '');
-      this.showItem(id);
+      this.show(id);
     }
   }
 
@@ -42,7 +42,7 @@ class Swapper {
     this.currIndex = this.ids.indexOf(id);
   }
 
-  showItem(id) {
+  show(id) {
     if(!id) return;
     this.closeAll();
     this.onOpen(id);
@@ -76,14 +76,14 @@ class Swapper {
     const nextIndex = this.currIndex + 1;
     const index = nextIndex === this.ids.length ? 0 : nextIndex;
     const id = this.ids[index];
-    this.showItem(id);
+    this.show(id);
   }
 
   prev() {
     const prevIndex = this.currIndex - 1;
     const index = prevIndex < 0 ? this.ids.length - 1 : prevIndex;
     const id = this.ids[index];
-    this.showItem(id);
+    this.show(id);
   }
 }
 
