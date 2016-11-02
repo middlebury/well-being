@@ -1,14 +1,45 @@
-<p>You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
-<p>And we are here to help.</p>
-<nav>
-  <ul>
+<div class="topics">
+
+  <div class="topics__intro">
+    <p>You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
+    <p>And we are here to help.</p>
+  </div>
+
+  <nav class="topics-nav">
+    <ul>
+      {% for topic in site.data.topics %}
+      <li>
+        <a href="#{{topic.title | slugify}}" class="js-topics-nav-item">
+          <strong>{{topic.title}}</strong>
+          <p>{{topic.summary}}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <section class="topics-list">
     {% for topic in site.data.topics %}
-    <li>
-      <a href="#">
-        <strong>{{topic.title}}</strong>
-        <p>{{topic.summary}}</p>
-      </a>
-    </li>
+      <article class="topic-article js-topic-article" id="{{topic.title | slugify}}">
+        <h1 class="topic-article__title">{{topic.title}}</h1>
+        <div class="topic-article__content">{{topic.content | markdownify }}</div>
+        <h2 class="topic-article__subtitle">Resources</h2>
+        <ul class="resource-list">
+          {% for item in topic.resources %}
+          <li>
+            <a href="{{item.url}}">{{item.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </article>
     {% endfor %}
-  </ul>
-</nav>
+    <div class="topic-controls">
+      <div class="controls">
+        <button class="controls__btn controls__btn--prev" id="prev">&larr; Previous</button>
+        <button class="controls__btn controls__btn--next" id="next">Next &rarr;</button>
+        <button class="controls__btn controls__btn--close" id="close">Close &times;</button>
+      </div>
+    </div>
+  </section>
+
+</div>
