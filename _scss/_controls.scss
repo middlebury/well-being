@@ -1,0 +1,28 @@
+.controls {
+  padding: 0 30px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.controls__btn {
+  background-color: transparent;
+  border: 0;
+  color: $color-secondary;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: $font-family-sans-serif;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.controls__btn--prev {
+
+}
+
+.controls__btn--next {
+  flex-grow: auto;
+}
+
+.controls__btn--close {
+  align-self: flex-end;
+}
