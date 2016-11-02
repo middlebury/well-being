@@ -1,5 +1,11 @@
 <header class="site-header">
-  <div class="site-header__logo"><img src="/img/middlebury-logo.png" alt="Middlebury College"/></div>
+  <div class="site-header__logo">
+    <picture>
+      <source srcset="/img/middlebury-logo.png" media="(min-width: 768px)" />
+      <source srcset="/img/middlebury-logo-sm.png" />
+      <img src="/img/middlebury-logo.png" alt="Middlebury College"/>
+    </picture>
+  </div>
   <div class="site-header__title-container">
     <h1 class="site-header__title">Your well-being</h1>
   </div>
