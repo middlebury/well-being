@@ -52,8 +52,8 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('./_site/js'));
+    .pipe(browserSync.stream())
 });
 
 // TODO: get styles to beep on sass error
@@ -65,7 +65,7 @@ gulp.task('styles', function() {
     })).on('error', sass.logError)
     .pipe(autoprefixer(['last 2 versions'], { cascade: true }))
     .pipe(gulp.dest('_site/css'))
-    .pipe(browserSync.reload({stream:true}))
+    .pipe(browserSync.stream())
     .pipe(gulp.dest('./css'));
 });
 
