@@ -13,7 +13,7 @@ class Swapper {
     this.activeClassName = activeClassName;
     this.currIndex = 0;
     this.ids = [];
-    this.items.forEach(elem => this.ids.push(elem.id));
+    Array.from(this.items).forEach(elem => this.ids.push(elem.id));
   }
 
   init() {
@@ -22,7 +22,7 @@ class Swapper {
   }
 
   addListeners() {
-    this.navItems.forEach((elem) => {
+    Array.from(this.navItems).forEach((elem) => {
       elem.onclick = this.handleNavItemClick.bind(this);
     });
   }
@@ -54,7 +54,7 @@ class Swapper {
 
   closeAll() {
     this.onClose();
-    this.items.forEach(elem => {
+    Array.from(this.items).forEach(elem => {
       elem.style.display = 'none';
     });
     this.removeActiveClasses();
@@ -67,7 +67,7 @@ class Swapper {
   }
 
   removeActiveClasses() {
-    this.navItems.forEach(elem => {
+    Array.from(this.navItems).forEach(elem => {
       elem.classList.remove(this.activeClassName);
     });
   }
