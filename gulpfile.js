@@ -48,7 +48,7 @@ gulp.task('scripts', function() {
     })
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
