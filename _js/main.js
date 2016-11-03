@@ -1,21 +1,46 @@
 const Swapper = require('./swapper');
 
-const intro = document.querySelector('.topics__intro');
-const controls = document.querySelector('.controls');
+class Toggler {
+  constructor(selector) {
+    this.elem = document.querySelector(selector);
+    this.display = this.getStyle();
+  }
 
-const show = elem => elem.style.display = 'block';
-const hide = elem => elem.style.display = 'none';
+  hide() {
+    this.elem.style.display = 'none';
+  }
+
+  show() {
+    this.elem.style.display = null;
+  }
+
+  getStyle() {
+    var element = this.elem;
+    return element.currentStyle
+      ? element.currentStyle.display
+      : getComputedStyle(element, null).display;
+  }
+}
+
+const intro = new Toggler('.topics__intro');
+const controls = new Toggler('.controls');
+const listBubble = new Toggler('.topics-list .bubble');
 
 const swapper = new Swapper({
-  navItems: '.js-topics-nav-item',
-  items: '.js-topic-article',
-  onOpen() {
-    hide(intro);
-    show(controls);
+  navItems: '.topics-nav__anchor',
+  items: '.topic-article',
+  onOpen(id) {
+    intro.hide();
+    controls.show();
+
+    // window.history.pushState({
+    //   title: id,
+    // }, id, `/topics/#${id}`);
   },
   onClose() {
-    show(intro);
-    hide(controls);
+    intro.show();
+    // show(intro);
+    controls.hide();
   }
 });
 
