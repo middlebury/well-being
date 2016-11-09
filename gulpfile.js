@@ -52,8 +52,9 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./_site/js'));
+    .pipe(gulp.dest('./_site/js'))
     .pipe(browserSync.stream())
+    .pipe(gulp.dest('./js'));
 });
 
 // TODO: get styles to beep on sass error
