@@ -118,6 +118,11 @@ $button-rotation: 60deg;
 // }
 
 .hero__video {
+  video {
+    width: auto;
+    height: auto;
+  }
+
   @include media(md) {
     position: absolute;
     top: 0;
@@ -133,8 +138,6 @@ $button-rotation: 60deg;
       left: 50%;
       min-width: 100%;
       min-height: 100%;
-      width: auto;
-      height: auto;
       z-index: -100;
       transform: translateX(-50%) translateY(-50%);
     }

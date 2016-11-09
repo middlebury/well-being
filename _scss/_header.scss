@@ -3,7 +3,7 @@
   background-color: $color-primary;
   text-align: center;
 
-  @include media(md) {
+  @include media(lg) {
     text-align: left;
     position: fixed;
     top: 0;
@@ -24,29 +24,39 @@
 }
 
 .site-header__title-container {
-  background-color: $color-secondary;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @include media(md) {
     float: left;
-    position: relative;
+    justify-content: flex-start;
     height: 100px;
     width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     background-color: transparent;
+    overflow: visible;
+  }
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      background-color: $color-secondary;
-      height: 800px;
-      width: 800px;
-      border-radius: 100%;
-      bottom: 0;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $color-secondary;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 800px;
+    width: 800px;
+    z-index: 2;
+    border-radius: 100%;
+
+    @include media(md) {
       right: -50%;
-      z-index: 2;
+      transform: none;
+      left: auto;
     }
   }
 }
@@ -57,11 +67,11 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.175em;
+  position: relative;
   margin: 0;
+  z-index: 5;
 
   @include media(md) {
     padding-left: 20px;
-    position: relative;
-    z-index: 5;
   }
 }

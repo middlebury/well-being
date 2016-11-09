@@ -24,7 +24,7 @@ class Toggler {
 
 const intro = new Toggler('.topics__intro');
 const controls = new Toggler('.controls');
-const listBubble = new Toggler('.topics-list .bubble');
+const listBubble = document.querySelector('.topics-list .bubble');
 
 const swapper = new Swapper({
   navItems: '.topics-nav__anchor',
@@ -32,6 +32,8 @@ const swapper = new Swapper({
   onOpen(id) {
     intro.hide();
     controls.show();
+    listBubble.classList.add('active');
+    listBubble.style.display = null;
 
     // window.history.pushState({
     //   title: id,
@@ -41,8 +43,14 @@ const swapper = new Swapper({
     intro.show();
     // show(intro);
     controls.hide();
+    listBubble.classList.remove('active');
+    listBubble.style.display = 'none';
   }
 });
+
+var id = window.location.hash.replace('#', '');
+
+swapper.show(id);
 
 var closeBtn = document.querySelector('.controls__btn--close');
 var prevBtn = document.querySelector('.controls__btn--prev');
