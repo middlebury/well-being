@@ -114,7 +114,7 @@
     }
   }
 
-  &.active {
+  &.swapper-nav-item--is-active {
     border-color: $color-yellow;
     border-width: 6px;
 
@@ -129,6 +129,7 @@
   }
 }
 
+// todo: there must be a way to just invert the number instead of using nth()
 $rotate-map: 4 5 6 7 4 5 6 7;
 
 @for $i from 1 through 8 {
@@ -170,6 +171,14 @@ $rotate-map: 4 5 6 7 4 5 6 7;
 
 .topic-article {
   padding: 30px;
+
+  .has-swapper & {
+    display: none;
+  }
+
+  &.swapper-item--is-active {
+    display: block;
+  }
 }
 
 .topic-article__title {

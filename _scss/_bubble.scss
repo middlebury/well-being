@@ -20,6 +20,20 @@
 .bubble--intro {
   display: flex;
   align-items: center;
+
+  .swapper--is-open & {
+    display: none;
+  }
+}
+
+.bubble--topics {
+  .has-swapper & {
+    display: none;
+  }
+
+  .swapper--is-open & {
+    display: block;
+  }
 }
 
 .bubble--gradient {
