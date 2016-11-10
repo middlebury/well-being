@@ -1,3 +1,5 @@
+require('babel-polyfill');
+
 const Swapper = require('./swapper');
 
 class Toggler {
