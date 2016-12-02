@@ -71,7 +71,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('_js/*.js', ['scripts']);
+  gulp.watch('_js/**/*.js', ['scripts']);
   gulp.watch('_scss/*.scss', ['styles']);
   gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_data/*', '_includes/*.html'], ['jekyll-rebuild']);
 });
