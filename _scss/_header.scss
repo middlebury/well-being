@@ -3,7 +3,7 @@
   background-color: $color-primary;
   text-align: center;
 
-  @include media(lg) {
+  @include media(md) {
     text-align: left;
     position: fixed;
     top: 0;
