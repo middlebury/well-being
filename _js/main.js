@@ -1,4 +1,7 @@
 require('babel-polyfill');
+var html = document.documentElement;
+html.classList.add('js');
+html.classList.remove('no-js');
 
 const Swapper = require('./swapper');
 
