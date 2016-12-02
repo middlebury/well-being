@@ -157,6 +157,7 @@ $rotate-map: 4 5 6 7 4 5 6 7;
   color: $color-secondary;
   font-weight: 500;
   font-size: 16px;
+  transition: .2s;
 }
 
 .topics-nav__summary {
@@ -169,8 +170,20 @@ $rotate-map: 4 5 6 7 4 5 6 7;
   position: relative;
 }
 
+@keyframes article {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .topic-article {
   padding: 30px;
+  animation: article .8s;
 
   .has-swapper & {
     display: none;
@@ -178,6 +191,7 @@ $rotate-map: 4 5 6 7 4 5 6 7;
 
   &.swapper-item--is-active {
     display: block;
+    opacity: 1;
   }
 }
 
