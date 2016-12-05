@@ -40,6 +40,12 @@ class Swapper {
     document.body.classList.add('has-swapper');
   }
 
+  destroy() {
+    this.removeListeners();
+    document.body.classList.remove('has-swapper');
+    this.closeAll();
+  }
+
   addListeners() {
     Array.from(this.navItems).forEach((elem) => {
       elem.addEventListener('click', this.handleNavItemClick.bind(this));
@@ -151,10 +157,6 @@ class Swapper {
     const lastItem = this.items[this.items.length - 1];
     const id = lastItem.getAttribute('id');
     this.show(id);
-  }
-
-  destroy() {
-    this.removeListeners();
   }
 }
 
