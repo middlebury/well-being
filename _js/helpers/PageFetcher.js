@@ -85,17 +85,11 @@ class PageFetcher {
   }
 
   afterPageChange(cb) {
-    if(isFunction(this.afterChange)) {
-      return this.afterChange(cb);
-    }
-    cb();
+    isFunction(this.afterChange) ? this.afterChange(cb) : cb();
   }
 
   beforePageChange(cb) {
-    if(isFunction(this.beforeChange)) {
-      return this.beforeChange(cb);
-    }
-    cb();
+    isFunction(this.beforeChange) ? this.beforeChange(cb) : cb();
   }
 
   handlePopState(e) {
