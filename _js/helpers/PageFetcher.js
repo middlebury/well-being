@@ -10,7 +10,8 @@ const isFunction = (func) => typeof func === 'function';
 class PageFetcher {
   constructor({
     root,
-    dataAttr = 'fade-link',
+    fetchSelector = '#root',
+    dataAttr = 'fetch-me',
     beforeChange,
     afterChange,
   }) {
@@ -19,6 +20,13 @@ class PageFetcher {
      * @type {element}
      */
     this.root = root;
+
+    /**
+     * Selector to be used when fetching content
+     * @type {string}
+     * @default '#root'
+     */
+    this.fetchSelector = fetchSelector;
 
     /**
      * Links with this data attribute will trigger fetches. Must be a link so the href attribute is present.
@@ -67,7 +75,7 @@ class PageFetcher {
       .then(text => new window.DOMParser().parseFromString(text, 'text/html'))
       // insert the fetched content into the root div
       .then(html => {
-        this.root.innerHTML = html.getElementById('root').innerHTML;
+        this.root.innerHTML = html.querySelector(this.fetchSelector).innerHTML;
       })
       // listen for errors and "redirect" the user if fetching doesn't happen
       .catch(err => {
