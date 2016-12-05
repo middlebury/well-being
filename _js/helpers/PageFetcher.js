@@ -101,7 +101,7 @@ class PageFetcher {
   handlePopState(e) {
     this.beforePageChange(() => {
       this.loadPage(e.state.page).then(() => {
-        this.beforePageChange();
+        this.afterPageChange();
       });
     });
   }
