@@ -4,9 +4,15 @@ const PageFetcher = require('./helpers/PageFetcher');
 
 class App {
   constructor() {
+    this.swapper = null;
+    this.pageFetcher = null;
+    this.init();
+  }
+
+  init() {
     var root = document.getElementById('root');
 
-    this.swapper = null;
+    this.initSwapper();
 
     this.pageFetcher = new PageFetcher({
       root,
@@ -21,7 +27,7 @@ class App {
         });
       },
       afterChange: () => {
-        this.init();
+        this.initSwapper();
         anime({
           targets: root,
           duration: 500,
@@ -31,17 +37,19 @@ class App {
         });
       }
     });
-
-    this.init();
   }
 
-  init() {
+  initSwapper() {
     if(window.location.pathname.indexOf('overview') !== -1) {
       this.swapper = new Swapper({
         itemsContainer: '.topics-list',
         navItems: '.topics-nav__anchor',
         items: '.topic-article',
       });
+    } else {
+      if(this.swapper instanceof Swapper) {
+        this.swapper.destroy();
+      }
     }
   }
 }
