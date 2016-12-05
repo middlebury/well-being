@@ -1,8 +1,12 @@
-// fetch polyfill
+// fetch polyfill for ie11
 require('whatwg-fetch');
 
 const isFunction = (func) => typeof func === 'function';
 
+/**
+ * Fetches content from link urls and updates window history state and inserts fetched content into root div.
+ * @type {class}
+ */
 class PageFetcher {
   constructor({
     root,
@@ -10,9 +14,29 @@ class PageFetcher {
     beforeChange,
     afterChange,
   }) {
+    /**
+     * The root element to insert fetched content into.
+     * @type {element}
+     */
     this.root = root;
+
+    /**
+     * Links with this data attribute will trigger fetches. Must be a link so the href attribute is present.
+     * @type {string}
+     * @default 'fetch-me'
+     */
     this.dataAttr = dataAttr;
+
+    /**
+     * Function to called before fetch happens.
+     * @type {func}
+     */
     this.beforeChange = beforeChange;
+
+    /**
+     * Function to called after fetch happens.
+     * @type {func}
+     */
     this.afterChange = afterChange;
 
     this.init();
@@ -23,8 +47,10 @@ class PageFetcher {
   }
 
   addListeners() {
+    // listen for popstate changes e.g. back button clicks
     window.addEventListener('popstate', this.handlePopState.bind(this));
 
+    // dynamically listen for link clicks that have the data attribute
     document.body.addEventListener('click', e => {
       // check if the data- attribute is on the target
       if(e.target.getAttribute(`data-${this.dataAttr}`) !== null) {
@@ -35,11 +61,15 @@ class PageFetcher {
 
   loadPage(url) {
     return fetch(url)
+      // turn the response into text
       .then(res => res.text())
+      // parse the text response so we can only fetch content from the pages root div
       .then(text => new window.DOMParser().parseFromString(text, 'text/html'))
+      // insert the fetched content into the root div
       .then(html => {
         this.root.innerHTML = html.getElementById('root').innerHTML;
       })
+      // listen for errors and "redirect" the user if fetching doesn't happen
       .catch(err => {
         console.error(err);
         window.location = url;
@@ -70,6 +100,7 @@ class PageFetcher {
 
   handleLinkClick(e) {
     e.preventDefault();
+
     var href = e.target.href;
 
     // do nothing if user is already on the page they clicked a link to
