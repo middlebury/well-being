@@ -25,6 +25,12 @@ class Swapper {
     this.closedContainerClass = closedContainerClass;
     this.openBodyClass = openBodyClass;
     this.closedBodyClass = closedBodyClass;
+
+    this.closeBtn = document.querySelector('.controls__btn--close');
+    this.prevBtn = document.querySelector('.controls__btn--prev');
+    this.nextBtn = document.querySelector('.controls__btn--next');
+
+    this.init();
   }
 
   init() {
@@ -36,7 +42,37 @@ class Swapper {
 
   addListeners() {
     Array.from(this.navItems).forEach((elem) => {
-      elem.onclick = this.handleNavItemClick.bind(this);
+      elem.addEventListener('click', this.handleNavItemClick.bind(this));
+    });
+
+    this.closeBtn.addEventListener('click', () => {
+      this.closeAll();
+    });
+
+    this.prevBtn.addEventListener('click', () => {
+      this.prev();
+    });
+
+    this.nextBtn.addEventListener('click', () => {
+      this.next();
+    });
+  }
+
+  removeListeners() {
+    Array.from(this.navItems).forEach((elem) => {
+      elem.removeEventListener('click', this.handleNavItemClick.bind(this));
+    });
+
+    this.closeBtn.removeEventListener('click', () => {
+      this.closeAll();
+    });
+
+    this.prevBtn.removeEventListener('click', () => {
+      this.prev();
+    });
+
+    this.nextBtn.removeEventListener('click', () => {
+      this.next();
     });
   }
 
@@ -116,6 +152,10 @@ class Swapper {
     const id = lastItem.getAttribute('id');
     this.show(id);
   }
+
+  destroy() {
+    this.removeListeners();
+  }
 }
 
-module.exports = exports = Swapper;
+module.exports = Swapper;
