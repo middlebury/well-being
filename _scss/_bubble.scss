@@ -45,7 +45,7 @@
     border-color: transparent;
     border-left-color: $color-secondary-dark;
 
-    &.active {
+    .swapper--is-open & {
       border-left-color: $color-yellow;
     }
   }
