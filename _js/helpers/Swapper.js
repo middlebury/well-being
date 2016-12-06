@@ -32,6 +32,11 @@ class Swapper {
     this.prevBtn = document.querySelector('.controls__btn--prev');
     this.nextBtn = document.querySelector('.controls__btn--next');
 
+    // bind click listeners
+    this.handleNavItemClick = this.handleNavItemClick.bind(this);
+    this.handleCloseBtnClick = this.handleCloseBtnClick.bind(this);
+    this.handleNextBtnClick = this.handleNextBtnClick.bind(this);
+    this.handlePrevBtnClick = this.handlePrevBtnClick.bind(this);
     this.init();
   }
 
@@ -50,22 +55,22 @@ class Swapper {
 
   addListeners() {
     forEach(this.navItems, (elem) => {
-      elem.addEventListener('click', this.handleNavItemClick.bind(this));
+      elem.addEventListener('click', this.handleNavItemClick);
     });
 
-    this.closeBtn.addEventListener('click', this.handleCloseBtnClick.bind(this));
-    this.prevBtn.addEventListener('click', this.handlePrevBtnClick.bind(this));
-    this.nextBtn.addEventListener('click', this.handleNextBtnClick.bind(this));
+    this.closeBtn.addEventListener('click', this.handleCloseBtnClick);
+    this.prevBtn.addEventListener('click', this.handlePrevBtnClick);
+    this.nextBtn.addEventListener('click', this.handleNextBtnClick);
   }
 
   removeListeners() {
     forEach(this.navItems, (elem) => {
-      elem.removeEventListener('click', this.handleNavItemClick.bind(this));
+      elem.removeEventListener('click', this.handleNavItemClick);
     });
 
-    this.closeBtn.removeEventListener('click', this.handleCloseBtnClick.bind(this));
-    this.prevBtn.removeEventListener('click', this.handlePrevBtnClick.bind(this));
-    this.nextBtn.removeEventListener('click', this.handleNextBtnClick.bind(this));
+    this.closeBtn.removeEventListener('click', this.handleCloseBtnClick);
+    this.prevBtn.removeEventListener('click', this.handlePrevBtnClick);
+    this.nextBtn.removeEventListener('click', this.handleNextBtnClick);
   }
 
   handleCloseBtnClick() {
