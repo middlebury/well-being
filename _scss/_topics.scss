@@ -190,13 +190,13 @@ $rotate-map: 4 5 6 7 4 5 6 7;
   animation: article .8s;
 
   .has-swapper & {
-    display: none;
+    // display: none;
   }
 
-  &.swapper-item--is-active {
-    display: block;
-    opacity: 1;
-  }
+  // &.swapper-item--is-active {
+  //   display: block;
+  //   opacity: 1;
+  // }
 }
 
 .topic-article__title {

@@ -59,16 +59,10 @@ class Swapper {
       elem.addEventListener('click', this.handleNavItemClick.bind(this));
     });
 
-    this.closeBtn.addEventListener('click', () => {
-      this.closeAll();
-    });
+    this.closeBtn.addEventListener('click', this.handleCloseBtnClick.bind(this));
+    this.prevBtn.addEventListener('click', this.handlePrevBtnClick.bind(this));
+    this.nextBtn.addEventListener('click', this.handleNextBtnClick.bind(this));
 
-    this.prevBtn.addEventListener('click', () => {
-      this.prev();
-    });
-
-    this.nextBtn.addEventListener('click', () => {
-      this.next();
     });
   }
 
@@ -77,17 +71,21 @@ class Swapper {
       elem.removeEventListener('click', this.handleNavItemClick.bind(this));
     });
 
-    this.closeBtn.removeEventListener('click', () => {
-      this.closeAll();
-    });
+    this.closeBtn.removeEventListener('click', this.handleCloseBtnClick.bind(this));
+    this.prevBtn.removeEventListener('click', this.handlePrevBtnClick.bind(this));
+    this.nextBtn.removeEventListener('click', this.handleNextBtnClick.bind(this));
+  }
 
-    this.prevBtn.removeEventListener('click', () => {
-      this.prev();
-    });
+  handleCloseBtnClick() {
+    this.closeAll();
+  }
 
-    this.nextBtn.removeEventListener('click', () => {
-      this.next();
-    });
+  handlePrevBtnClick() {
+    this.prev();
+  }
+
+  handleNextBtnClick() {
+    this.next();
   }
 
   handleNavItemClick(e) {
