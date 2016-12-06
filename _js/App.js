@@ -16,6 +16,7 @@ class App {
     var root = document.getElementById('root');
 
     this.initSwapper();
+    this.addListeners();
 
     this.pageFetcher = new PageFetcher({
       root,
@@ -42,13 +43,21 @@ class App {
     });
   }
 
+  addListeners() {
+    window.addEventListener('hashchange', () => {
+      if(this.swapper instanceof Swapper) {
+        this.swapper.open(window.location.hash.replace('#', ''));
+      }
+    });
+  }
+
   initSwapper() {
     if(window.location.pathname.indexOf('overview') !== -1) {
       this.swapper = new Swapper({
         itemsContainer: '.topics-list',
         navItems: '.topics-nav__anchor',
         items: '.topic-article',
-        beforeOpen: (isNext, cb) => {
+        beforeOpen: (id, isNext, cb) => {
           anime({
             targets: '.topic-articles',
             opacity: 0,
@@ -57,8 +66,14 @@ class App {
             easing: 'linear',
             complete: cb
           });
+
+          window.history.pushState({
+            page: null,
+            hash: id
+          }, id, '#' + id);
+
         },
-        afterOpen: (isNext) => {
+        afterOpen: (id, isNext) => {
           anime({
             targets: '.topic-articles',
             translateY: isNext ? [-20, 0] : [20, 0],
@@ -68,6 +83,13 @@ class App {
           });
         }
       });
+
+      const { hash } = window.location;
+
+      if(hash) {
+        this.swapper.open(hash.replace('#', ''));
+      }
+
     } else {
       if(this.swapper instanceof Swapper) {
         this.swapper.destroy();
