@@ -56,8 +56,6 @@ class Swapper {
     this.closeBtn.addEventListener('click', this.handleCloseBtnClick.bind(this));
     this.prevBtn.addEventListener('click', this.handlePrevBtnClick.bind(this));
     this.nextBtn.addEventListener('click', this.handleNextBtnClick.bind(this));
-
-    });
   }
 
   removeListeners() {
