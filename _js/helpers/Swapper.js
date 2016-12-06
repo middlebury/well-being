@@ -5,9 +5,7 @@ class Swapper {
     items,
     navItems,
     itemsContainer,
-    onOpen = () => null,
-    onClose = () => null,
-    beforeOpen = (_, cb) => cb(),
+    beforeOpen = (id, isNext, cb) => cb(),
     afterOpen = () => null,
     activeNavItemClass = 'swapper-nav-item--is-active',
     activeItemClass = 'swapper-item--is-active',
@@ -124,7 +122,7 @@ class Swapper {
 
     const isNext = this.isIdNext(id);
 
-    this.beforeOpen(isNext, () => {
+    this.beforeOpen(id, isNext, () => {
       this.setActiveId(id);
 
       this.close();
@@ -140,7 +138,7 @@ class Swapper {
 
       document.body.classList.add(this.openBodyClass);
 
-      this.afterOpen(isNext);
+      this.afterOpen(id, isNext);
     });
   }
 
