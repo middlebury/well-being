@@ -48,6 +48,25 @@ class App {
         itemsContainer: '.topics-list',
         navItems: '.topics-nav__anchor',
         items: '.topic-article',
+        beforeOpen: (isNext, cb) => {
+          anime({
+            targets: '.topic-articles',
+            opacity: 0,
+            translateY: isNext ? 20 : -20,
+            duration: 300,
+            easing: 'linear',
+            complete: cb
+          });
+        },
+        afterOpen: (isNext) => {
+          anime({
+            targets: '.topic-articles',
+            translateY: isNext ? [-20, 0] : [20, 0],
+            duration: 300,
+            easing: 'linear',
+            opacity: 1
+          });
+        }
       });
     } else {
       if(this.swapper instanceof Swapper) {

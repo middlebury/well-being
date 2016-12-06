@@ -28,25 +28,27 @@
     <div class="bubble bubble--gradient bubble--topics">
       <div class="bubble__content">
 
-        {% for topic in site.data.topics %}
-          <article class="topic-article" id="{{topic.title | slugify}}">
-            <h1 class="topic-article__title">{{topic.title}}</h1>
-            <div class="topic-article__content">{{topic.content | markdownify }}</div>
-            <h2 class="topic-article__subtitle">Resources</h2>
-            <ul class="resource-list">
-              {% for item in topic.resources %}
-              <li>
-                <a href="{{item.url}}">{{item.title}}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </article>
-        {% endfor %}
-        <div class="topic-controls">
-          <div class="controls">
+        <div class="topic-articles">
+          {% for topic in site.data.topics %}
+            <article class="topic-article" id="{{topic.title | slugify}}">
+              <h1 class="topic-article__title">{{topic.title}}</h1>
+              <div class="topic-article__content">{{topic.content | markdownify }}</div>
+              <h2 class="topic-article__subtitle">Resources</h2>
+              <ul class="resource-list">
+                {% for item in topic.resources %}
+                <li>
+                  <a href="{{item.url}}">{{item.title}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </article>
+          {% endfor %}
+          <div class="topic-controls">
+            <div class="controls">
               <button class="controls__btn controls__btn--prev" id="prev"><span class="controls__icon">&larr;</span> Previous</button>
               <button class="controls__btn controls__btn--next" id="next">Next <span class="controls__icon">&rarr;</span></button>
               <button class="controls__btn controls__btn--close" id="close">Close <span class="controls__icon">&times;</span></button>
+            </div>
           </div>
         </div>
 
