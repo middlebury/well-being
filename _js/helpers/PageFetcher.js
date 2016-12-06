@@ -1,7 +1,7 @@
 // fetch polyfill for ie11
 require('whatwg-fetch');
 
-const isFunction = (func) => typeof func === 'function';
+const isFunction = require('./isFunction');
 
 /**
  * Fetches content from link urls and updates window history state and inserts fetched content into root div.
