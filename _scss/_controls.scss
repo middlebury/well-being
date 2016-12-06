@@ -32,3 +32,20 @@
   float: right;
   // align-self: flex-end;
 }
+
+.controls__icon {
+  transition: transform .5s;
+  display: inline-block;
+
+  .controls__btn--prev:hover & {
+    transform: translateX(-5px);
+  }
+
+  .controls__btn--next:hover & {
+    transform: translateX(5px);
+  }
+
+  .controls__btn--close:hover & {
+    transform: rotate(90deg);
+  }
+}
