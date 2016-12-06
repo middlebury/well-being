@@ -84,20 +84,31 @@ class PageFetcher {
       });
   }
 
-  afterPageChange(cb) {
-    isFunction(this.afterChange) ? this.afterChange(cb) : cb();
+  beforePageChange(url, cb) {
+    if(isFunction(this.beforeChange)) {
+      this.beforeChange(url, cb);
+    } else if(isFunction(cb)) {
+      cb();
+    }
   }
 
-  beforePageChange(cb) {
-    isFunction(this.beforeChange) ? this.beforeChange(cb) : cb();
+  afterPageChange(url, cb) {
+    if(isFunction(this.beforeChange)) {
+      this.afterChange(url, cb);
+    } else if(isFunction(cb)) {
+      cb();
+    }
   }
 
   handlePopState(e) {
-    this.beforePageChange(() => {
-      this.loadPage(e.state.page).then(() => {
-        this.afterPageChange();
+    if(e.state && e.state.page && e.state.page.indexOf('#') == -1) {
+      const { page } = e.state;
+      this.beforePageChange(page, () => {
+        this.loadPage(page).then(() => {
+          this.afterPageChange(page);
+        });
       });
-    });
+    }
   }
 
   handleLinkClick(e) {
@@ -110,13 +121,13 @@ class PageFetcher {
       return;
     }
 
-    this.beforePageChange(() => {
+    this.beforePageChange(href, () => {
       history.pushState({
         page: href || '/'
       }, href, href);
 
       this.loadPage(href).then(() => {
-        this.afterPageChange();
+        this.afterPageChange(href);
       });
     });
   }
