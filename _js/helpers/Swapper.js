@@ -20,10 +20,6 @@ class Swapper {
     this.items = document.querySelectorAll(items);
     this.container = document.querySelector(itemsContainer);
 
-    // register open / close callbacks
-    this.onOpen = onOpen;
-    this.onClose = onClose;
-
     this.beforeOpen = beforeOpen;
     this.afterOpen = afterOpen;
 
@@ -160,9 +156,6 @@ class Swapper {
     document.body.classList.remove(this.openBodyClass);
 
     this.removeActiveNavItemClass();
-
-    // run onClose callback
-    this.onClose();
   }
 
   addActiveNavItemClass(id) {
