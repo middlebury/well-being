@@ -75,7 +75,7 @@
   display: block;
   border-top: 1px solid $color-secondary-dark;
   position: relative;
-  transition: border-width .2s;
+  transition: .2s;
 
   @include media(md) {
     border-top: 0;
@@ -158,6 +158,10 @@ $rotate-map: 4 5 6 7 4 5 6 7;
   font-weight: 500;
   font-size: 16px;
   transition: .2s;
+
+  .topics-nav__anchor:hover & {
+    color: $color-yellow;
+  }
 }
 
 .topics-nav__summary {
