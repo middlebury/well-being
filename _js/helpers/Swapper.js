@@ -1,3 +1,11 @@
+const forEach = (items, cb) => {
+  var i;
+  var count = items.length;
+  for(i = 0; i < count; i++) {
+    cb(items[i]);
+  }
+};
+
 class Swapper {
   constructor({
     items,
@@ -47,7 +55,7 @@ class Swapper {
   }
 
   addListeners() {
-    Array.from(this.navItems).forEach((elem) => {
+    forEach(this.navItems, (elem) => {
       elem.addEventListener('click', this.handleNavItemClick.bind(this));
     });
 
@@ -65,7 +73,7 @@ class Swapper {
   }
 
   removeListeners() {
-    Array.from(this.navItems).forEach((elem) => {
+    forEach(this.navItems, (elem) => {
       elem.removeEventListener('click', this.handleNavItemClick.bind(this));
     });
 
