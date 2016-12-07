@@ -2,6 +2,7 @@
   @include clearfix();
   background-color: $color-primary;
   text-align: center;
+  position: relative;
 
   @include media(md) {
     text-align: left;
@@ -16,22 +17,33 @@
 
 .site-header__logo {
   padding: 10px;
+  position: relative;
+  z-index: 2;
+  background-color: $color-primary;
 
   @include media(md) {
     float: right;
     padding: 30px 40px;
+    background-color: transparent;
   }
 }
 
-.site-header__title-container {
-  position: relative;
+.site-header__title {
+  position: absolute;
+  left: 50%;
+  top: 100%;
   height: 50px;
-  overflow: hidden;
+  width: 100%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 
   @include media(md) {
+    left: auto;
+    top: auto;
+    transform: none;
     float: left;
     justify-content: flex-start;
     height: 100px;
@@ -61,7 +73,7 @@
   }
 }
 
-.site-header__title {
+.site-title {
   color: $color-primary;
   font-size: 16px;
   font-weight: 600;
@@ -76,7 +88,7 @@
   }
 }
 
-.site-header__link {
+.site-title__link {
   color: currentColor;
   text-decoration: none;
 }
