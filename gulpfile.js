@@ -8,6 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var babelify = require('babelify');
+var ghPages = require('gulp-gh-pages');
 var browserSync = require('browser-sync');
 var cp = require('child_process');
 var beeper = require('beeper');
@@ -77,5 +78,10 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['jekyll-build', 'scripts', 'styles']);
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('./_site/**/*')
+    .pipe(ghPages());
+});
 
 gulp.task('default', ['build', 'browser-sync', 'watch']);
