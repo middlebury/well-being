@@ -1,7 +1,8 @@
 <div class="hero">
   <div class="hero__video">
-    <video preload="preload" loop="loop" poster="{{ "/img/campus.jpg" | prepend: site.baseurl }}">
-      <source src=""/>
+    <video autoplay preload loop poster="{{ "/img/campus.jpg" | prepend: site.baseurl }}">
+      <source type="video/mp4" src="{{ "/media/well-being.mp4" | prepend: site.baseurl }}" />
+      <source type="video/webm" src="{{ "/media/well-being.webm" | prepend: site.baseurl }}" />
     </video>
   </div>
   <div class="hero__content">
