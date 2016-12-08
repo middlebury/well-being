@@ -1,6 +1,9 @@
 const anime = require('animejs');
 const Swapper = require('./helpers/swapper');
 const PageFetcher = require('./helpers/PageFetcher');
+const isTablet = require('./helpers/isTablet');
+
+const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
 
 // if previous state is overview, then the user is navigating home
 const isUrlOverview = url => url.indexOf('overview') >= 0;
@@ -37,7 +40,10 @@ class App {
           duration: 500,
           opacity: 1,
           translateY: isUrlOverview(url) ? [-20, 0] : [20, 0],
-          easing: 'linear'
+          easing: 'linear',
+          complete: () => {
+            root.removeAttribute('style');
+          }
         });
       }
     });
@@ -58,6 +64,11 @@ class App {
         navItems: '.topics-nav__anchor',
         items: '.topic-article',
         beforeOpen: (id, isNext, cb) => {
+
+          if(!isDesktop()) {
+            return cb();
+          }
+
           anime({
             targets: '.topic-articles',
             opacity: 0,
@@ -74,6 +85,9 @@ class App {
 
         },
         afterOpen: (id, isNext) => {
+          if(!isDesktop()) {
+            return;
+          }
           anime({
             targets: '.topic-articles',
             translateY: isNext ? [-20, 0] : [20, 0],
