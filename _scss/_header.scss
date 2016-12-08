@@ -1,17 +1,13 @@
 .site-header {
   @include clearfix();
-  background-color: $color-primary;
-  text-align: center;
   position: relative;
 
-  @include media(md) {
-    text-align: left;
+  @include media(lg) {
     position: fixed;
     top: 0;
     width: 100%;
     left: 0;
     z-index: 5;
-    background-color: transparent;
   }
 }
 
@@ -20,6 +16,7 @@
   position: relative;
   z-index: 2;
   background-color: $color-primary;
+  text-align: center;
 
   @include media(md) {
     float: right;
