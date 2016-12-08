@@ -12,11 +12,20 @@ var ghPages = require('gulp-gh-pages');
 var browserSync = require('browser-sync');
 var cp = require('child_process');
 var beeper = require('beeper');
+var args = require('yargs').argv;
 
 // TODO: set up minification and sourcemaps for production only builds
 
+const production = !!args.production;
+
+const jekyllOpts = ['build'];
+
+if(!production) {
+  jekyllOpts.push('--config', '_config.dev.yml');
+}
+
 gulp.task('jekyll-build', function(done) {
-  return cp.spawn('jekyll', ['build'], {
+  return cp.spawn('jekyll', jekyllOpts, {
     stdio: 'inherit'
   }).on('close', done);
 });

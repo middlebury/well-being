@@ -1,6 +1,6 @@
 title: Middlebury Well-Being
 description:
-baseurl: "/comm/well-being"
+baseurl: ""
 
 markdown: kramdown
 exclude:
