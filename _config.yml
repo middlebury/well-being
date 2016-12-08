@@ -1,7 +1,6 @@
 title: Middlebury Well-Being
 description:
-baseurl: "" 
-url: "http://yourdomain.com"
+baseurl: "/well-being"
 
 markdown: kramdown
 exclude:

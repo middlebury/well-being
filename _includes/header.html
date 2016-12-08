@@ -2,13 +2,13 @@
   <div class="site-header__logo">
     <a href="http://www.middlebury.edu">
       <picture>
-        <source srcset="/img/middlebury-logo.png" media="(min-width: 1024px)" />
-        <source srcset="/img/middlebury-logo-sm.png" />
-        <img src="/img/middlebury-logo.png" alt="Middlebury College"/>
+        <source srcset="{{ "/img/middlebury-logo.png" || prepend: site.baseurl }}" media="(min-width: 1024px)" />
+        <source srcset="{{ "/img/middlebury-logo-sm.png" || prepend: site.baseurl }}" />
+        <img src="{{ "/img/middlebury-logo.png" | prepend: site.baseurl }}" alt="Middlebury College"/>
       </picture>
     </a>
   </div>
   <div class="site-header__title">
-    <h1 class="site-title"><a href="/" class="site-title__link" data-fetch-me>Your well-being</a></h1>
+    <h1 class="site-title"><a href="{{site.baseurl}}" class="site-title__link" data-fetch-me>Your well-being</a></h1>
   </div>
 </header>
