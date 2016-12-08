@@ -75,6 +75,32 @@ $button-rotation: 60deg;
   text-transform: uppercase;
   padding: 5px 10px;
   text-decoration: none;
+  position: relative;
+  transition: .5s;
+
+  &:hover {
+    // background-color: $color-secondary-dark;
+    // color: $white;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &:before {
+
+  }
+
+  &:after {
+    top: 50%;
+    left: 100%;
+    height: 2px;
+    width: 500px;
+    background-color: $color-secondary;
+  }
 }
 
 // @keyframes spin {
