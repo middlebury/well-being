@@ -62,10 +62,6 @@
   @include media(lg) {
     margin-bottom: 20px;
   }
-
-  @include media(xl) {
-    // margin-bottom: 20px;
-  }
 }
 
 .topics-nav__anchor {
