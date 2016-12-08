@@ -153,6 +153,8 @@ class Swapper {
       elem.classList.remove(this.activeItemClass);
     }
 
+    this.id = null;
+
     document.body.classList.remove(this.openBodyClass);
 
     this.removeActiveNavItemClass();
