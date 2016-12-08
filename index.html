@@ -1,7 +1,53 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <title>Middlebury Well-Being</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/7327752/css/fonts.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="next" href="overview/index.html">
+  </head>
+  <body>
+    <header class="site-header">
+  <div class="site-header__logo">
+    <a href="http://www.middlebury.edu">
+      <picture>
+        <source srcset="/img/middlebury-logo.png" media="(min-width: 1024px)" />
+        <source srcset="/img/middlebury-logo-sm.png" />
+        <img src="/img/middlebury-logo.png" alt="Middlebury College"/>
+      </picture>
+    </a>
+  </div>
+  <div class="site-header__title">
+    <h1 class="site-title"><a href="/" class="site-title__link" data-fetch-me>Your well-being</a></h1>
+  </div>
+</header>
 
-<section class="section">
-  {% include hero.html %}
+    <div id="root">
+      <section class="section">
+  <div class="hero">
+  <div class="hero__video">
+    <video preload="preload" loop="loop" poster="img/campus.jpg">
+      <source src=""/>
+    </video>
+  </div>
+  <div class="hero__content">
+    <div class="bubble bubble--hero">
+      <div class="bubble__content">
+        <h2 class="hero__title">How are you?</h2>
+        <p class="hero__lead">No, really. How are you?</p>
+        <p class="hero__para">When we and the people around us are at our best, it only makes our community better and stronger.</p>
+        <p class="hero__para">Here you’ll find some of the opportunities, resources, and support that we can provide to help you engage in your well-being.
+        <div class="hero__button-container"><a href="/overview" class="hero__button" data-fetch-me>Explore</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
+
+    </div>
+    <script src="/js/bundle.js"></script>
+  </body>
+</html>
