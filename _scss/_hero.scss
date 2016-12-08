@@ -58,23 +58,6 @@ $button-rotation: 60deg;
   text-align: center;
   padding: 20px 0;
 
-  // &:before {
-  //   content: '';
-  //   display: block;
-  // }
-  //
-  // &:after {
-  //   content: '';
-  //   display: block;
-  //   position: relative;
-  //   background-color: $color-secondary;
-  //   right: 0;
-  //   bottom: 0;
-  //   top: 0;
-  //   height: 50px;
-  //   width: 50px;
-  // }
-
   @include media(md) {
     background-color: transparent;
     padding: 0;
