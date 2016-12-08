@@ -3,8 +3,6 @@
 }
 
 .hero__content {
-  padding: 30px;
-
   @include media(md) {
     position: absolute;
     left: 50%;
@@ -15,46 +13,31 @@
   }
 }
 
-$button-rotation: 60deg;
-
-.hero__bubble {
-  @include media(md) {
-    border-radius: 100%;
-    background-color: $color-transparent-bg;
-    color: $white;
-    height: 700px;
-    width: 700px;
-    display: flex;
-    align-items: center;
-    border-style: solid;
-    border-width: 2px;
-    border-color: transparent $color-secondary transparent transparent;
-    transform: rotate($button-rotation);
-    mix-blend-mode: multiply;
-    // animation: 5s spin;
-  }
+.hero__title,
+.hero__subtitle {
+  font-size: 30px;
+  margin-top: 0;
 }
 
-.hero__lead {
-  font-size: 20px;
+.hero__title {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.hero__subtitle {
+  font-weight: 600;
 }
 
 .hero__para {
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 300;
+  font-size: 18px;
 
   @include media(md) {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
 .hero__button-container {
   background-color: $color-primary;
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
-  // width: 100%;
   text-align: center;
   padding: 20px 0;
 
@@ -102,16 +85,6 @@ $button-rotation: 60deg;
     background-color: $color-secondary;
   }
 }
-
-// @keyframes spin {
-//   0% { transform: rotate(0) }
-//   100% { transform: rotate(360) }
-// }
-//
-// @keyframes spinBackwards {
-//   0% { transform: rotate(-0) }
-//   100% { transform: rotate(-360) }
-// }
 
 .hero__video {
   video {

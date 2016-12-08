@@ -1,32 +1,49 @@
+$hero-bubble-rotation: 60deg;
+
 .bubble {
-  @include media(lg) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble--hero {
+  @include media(md) {
     position: relative;
-    width: 100%;
-    height: 0;
-    padding: 70% 0;
+    padding: 50% 0;
     border-radius: 50%;
-    // display: flex;
-    // align-items: flex-start;
-    // height: 120%;
+    overflow: hidden;
+    background-color: $color-transparent-bg;
+    height: 700px;
+    width: 700px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent $color-secondary transparent transparent;
+    transform: rotate($hero-bubble-rotation);
   }
 
-  @include media(xl) {
-    padding: 50% 0;
-    // margin-top: -30%;
-    // align-items: center;
+  .bubble__content {
+    padding: 20px;
+
+    @include media(md) {
+      transform: rotate(-#{$hero-bubble-rotation});
+      padding: 0 100px;
+    }
   }
 }
 
 .bubble--intro {
-  display: flex;
-  align-items: center;
-
   .swapper--is-open & {
     display: none;
+  }
+
+  .bubble__content {
+    padding: 20px;
+    padding-top: 80px;
   }
 }
 
 .bubble--topics {
+
   .has-swapper & {
     display: none;
   }
@@ -34,36 +51,52 @@
   .swapper--is-open & {
     display: block;
   }
+
+  .bubble__content {
+    @include media(lg) {
+      margin-top: -50%;
+    }
+
+    @include media(xl) {
+      margin-top: -40%;
+    }
+  }
 }
 
 .bubble--gradient {
   background-image: radial-gradient(circle, #144F78, $color-primary 50%);
 
   @include media(lg) {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 50% 0;
+    border-radius: 50%;
     border-width: 2px;
     border-style: solid;
     border-color: transparent;
     border-left-color: $color-secondary-dark;
+  }
 
-    .swapper--is-open & {
-      border-left-color: $color-yellow;
+  .swapper--is-open & {
+    border-left-color: $color-yellow;
+  }
+
+  .bubble__content {
+    padding: 30px;
+    padding-top: 80px;
+
+    @include media(md) {
+      padding-top: 0;
+    }
+
+    @include media(lg) {
+      padding-left: 20%;
+      padding-right: 20%;
     }
   }
 }
 
 .bubble__content {
-  padding: 100px 20px;
 
-  @include media(lg) {
-    padding: 0 20%;
-    margin-top: -50%;
-  }
-
-  @include media(xl) {
-    margin-top: -40%;
-  }
-
-  .bubble--intro & {
-    margin-top: 0;
-  }
 }

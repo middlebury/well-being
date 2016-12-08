@@ -40,7 +40,7 @@
 
   @include media(lg) {
     order: 1;
-    min-width: 400px;
+    min-width: 330px;
     padding-right: 30px;
   }
 
@@ -176,6 +176,7 @@ $rotate-map: 4 5 6 7 4 5 6 7;
 
 .topic-article {
   padding: 30px;
+  margin-bottom: 40px;
 
   .has-swapper & {
     display: none;
