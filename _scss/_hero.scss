@@ -35,30 +35,17 @@ $button-rotation: 60deg;
   }
 }
 
-.hero__bubble-content {
-  h2 {
-    font-weight: 500;
-    margin-top: 0;
-    font-size: 25px;
+.hero__lead {
+  font-size: 20px;
+}
 
-    @include media(md) {
-      font-size: 35px;
-    }
-  }
-
-  p {
-    font-size: 18px;
-    font-weight: 300;
-
-    @include media(md) {
-      font-size: 20px;
-    }
-  }
+.hero__para {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 300;
 
   @include media(md) {
-    transform: rotate(-#{$button-rotation});
-    padding: 0 100px;
-    // animation: 5s spinBackwards;
+    font-size: 18px;
   }
 }
 
