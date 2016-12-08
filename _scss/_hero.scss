@@ -15,8 +15,13 @@
 
 .hero__title,
 .hero__subtitle {
-  font-size: 30px;
+  font-size: 26px;
   margin-top: 0;
+  line-height: 1.4;
+
+  @include media(md) {
+    font-size: 30px;
+  }
 }
 
 .hero__title {
@@ -30,6 +35,8 @@
 
 .hero__para {
   font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 
   @include media(md) {
     font-size: 20px;
@@ -39,13 +46,14 @@
 .hero__button-container {
   background-color: $color-primary;
   text-align: center;
-  padding: 20px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   @include media(md) {
     background-color: transparent;
-    padding: 0;
+    // padding: 0;
     text-align: center;
-    margin-top: 60px;
+    // margin-top: 60px;
     position: relative;
   }
 }

@@ -17,8 +17,11 @@
 
   p {
     font-size: 21px;
-    margin-bottom: 40px;
     font-weight: 300;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include media(lg) {
       font-size: 25px;
@@ -47,6 +50,7 @@
   @include media(xl) {
     min-width: 500px;
     padding-right: 50px;
+    padding-top: 80px;
   }
 }
 
@@ -61,6 +65,10 @@
 
   @include media(lg) {
     margin-bottom: 20px;
+  }
+
+  @include media(xxxl) {
+    margin-bottom: 40px;
   }
 }
 
