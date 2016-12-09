@@ -61,9 +61,22 @@
 
   @include media(lg) {
     border-top: 0;
-    border-right: 2px solid $color-secondary-dark;
     padding: 0 10px;
     text-align: right;
+
+    // pseudo outside border
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      left: 100%;
+      bottom: 0;
+      top: 0;
+      width: 2px;
+      background-color: $color-secondary-dark;
+      position: absolute;
+      transition: width .5s;
+    }
   }
 
   &:before {
@@ -92,12 +105,18 @@
   }
 
   &.swapper-nav-item--is-active {
-    border-color: $color-yellow;
-    border-width: 6px;
+    border-top-color: $color-yellow;
+    border-top-width: 6px;
 
     &:before {
       border-width: 6px;
       border-color: $color-yellow;
+    }
+
+    // pseudo border
+    &:after {
+      background-color: $color-yellow;
+      width: 5px;
     }
   }
 }
