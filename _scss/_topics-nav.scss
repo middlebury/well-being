@@ -10,6 +10,7 @@
     order: 1;
     min-width: 330px;
     padding-right: 30px;
+    // padding-left: 20px;
   }
 
   @include media(xl) {
@@ -91,8 +92,6 @@
       left: 0;
       top: 0;
       z-index: -1;
-      -webkit-transform-style: preserve-3d;
-      -webkit-font-smoothing: subpixel-antialiased;
     }
 
     @include media(lg) {
