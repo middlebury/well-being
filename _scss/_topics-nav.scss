@@ -99,8 +99,7 @@
 }
 
 // todo: there must be a way to just invert the number instead of using nth()
-// $rotate-map: 4 5 6 7 4 5 6 7;
-$rotate-map: 20 10 15 5 20 10 15 5;
+$rotate-map: 4 5 6 7 4 5 6 7;
 
 @for $i from 1 through 8 {
   @include media(lg) {
