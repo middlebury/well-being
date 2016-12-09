@@ -67,11 +67,11 @@ $hero-bubble-rotation: 60deg;
 
 .bubble--topics {
   @include media(lg) {
-    // padding: 80% 0;
+    padding: 60% 0;
   }
 
   @include media(xl) {
-    // padding: 50% 0;
+    padding: 50% 0;
   }
 
   .has-swapper & {
@@ -92,7 +92,7 @@ $hero-bubble-rotation: 60deg;
       // padding-top: 120px;
       padding-left: 20%;
       padding-right: 20%;
-      margin-top: -50%;
+      margin-top: -40%;
     }
 
     @include media(xl) {
