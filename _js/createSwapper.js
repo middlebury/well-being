@@ -8,6 +8,11 @@ module.exports = function createSwapper() {
     navItems: '.topics-nav__anchor',
     items: '.topic-article',
     beforeOpen: (id, isNext, cb) => {
+      window.history.pushState({
+        page: null,
+        hash: id
+      }, id, '#' + id);
+
       if(!isDesktop()) {
         return cb();
       }
@@ -20,12 +25,6 @@ module.exports = function createSwapper() {
         easing: 'linear',
         complete: cb
       });
-
-      window.history.pushState({
-        page: null,
-        hash: id
-      }, id, '#' + id);
-
     },
     afterOpen: (id, isNext) => {
       if(!isDesktop()) {
