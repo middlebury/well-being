@@ -75,7 +75,7 @@ $hero-bubble-rotation: 60deg;
 }
 
 .bubble--gradient {
-  background-image: radial-gradient(circle, #144F78, $color-primary 50%);
+  background-image: radial-gradient(circle, #144F78, $color-primary 70%);
 
   @include media(lg) {
     position: relative;
