@@ -17,14 +17,13 @@
 
   p {
     font-size: 21px;
-    font-weight: 300;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     @include media(lg) {
-      font-size: 25px;
+      font-size: 24px;
     }
   }
 }

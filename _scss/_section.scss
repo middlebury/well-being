@@ -15,5 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: auto;
+  }
+
+  @include media(xl) {
+    height: 100vh;
   }
 }

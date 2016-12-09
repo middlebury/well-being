@@ -15,6 +15,9 @@
   @include media(xl) {
     min-width: 500px;
     padding-right: 50px;
+  }
+
+  @include media(xxl) {
     padding-top: 80px;
   }
 }
@@ -27,10 +30,14 @@
 
 .topics-nav__item {
   list-style-type: none;
-  background-color: $color-primary;
+  // margin-bottom: 10px;
+
+  @include media(md) {
+  }
 
   @include media(lg) {
     margin-bottom: 20px;
+    background-color: $color-primary;
   }
 
   @include media(xxxl) {
@@ -125,6 +132,14 @@ $rotate-map: 4 5 6 7 4 5 6 7;
   font-size: 16px;
   transition: .2s;
 
+  @include media(md) {
+    font-size: 14px;
+  }
+
+  @include media(xl) {
+    font-size: 16px;
+  }
+
   .topics-nav__anchor:hover & {
     color: $color-yellow;
   }
@@ -137,4 +152,12 @@ $rotate-map: 4 5 6 7 4 5 6 7;
 .topics-nav__summary {
   font-size: 14px;
   margin-bottom: 10px;
+
+  @include media(md) {
+    font-size: 13px;
+  }
+
+  @include media(xl) {
+    font-size: 14px;
+  }
 }
