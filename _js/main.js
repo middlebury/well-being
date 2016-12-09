@@ -4,4 +4,6 @@ html.classList.remove('no-js');
 
 const App = require('./App');
 
-var WellBeingApp = new App();
+const WellBeingApp = new App();
+
+WellBeingApp.init();

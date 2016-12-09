@@ -1,110 +1,55 @@
-const anime = require('animejs');
-const Swapper = require('./helpers/swapper');
-const PageFetcher = require('./helpers/PageFetcher');
-const isTablet = require('./helpers/isTablet');
+const Swapper = require('./helpers/Swapper');
+const createPageFetcher = require('./createPageFetcher');
+const createSwapper = require('./createSwapper');
+const videoInit = require('./video-init');
 
-const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
-
-// if previous state is overview, then the user is navigating home
-const isUrlOverview = url => url.indexOf('overview') >= 0;
+const isLocation = (path) => window.location.pathname.indexOf(path) !== -1;
 
 class App {
   constructor() {
     this.swapper = null;
     this.pageFetcher = null;
-    this.init();
   }
 
+  // must be called after creating new instance of App
   init() {
-    var root = document.getElementById('root');
-
-    this.initSwapper();
     this.addListeners();
-
-    this.pageFetcher = new PageFetcher({
-      root,
-      beforeChange: (url, cb) => {
-        anime({
-          targets: root,
-          opacity: 0,
-          duration: 500,
-          translateY: isUrlOverview(url) ? 20 : -20,
-          easing: 'linear',
-          complete: cb
-        });
-      },
-      afterChange: (url, cb) => {
-        this.initSwapper();
-        anime({
-          targets: root,
-          duration: 500,
-          opacity: 1,
-          translateY: isUrlOverview(url) ? [-20, 0] : [20, 0],
-          easing: 'linear',
-          complete: () => {
-            root.removeAttribute('style');
-          }
-        });
-      }
+    this.pageFetcher = createPageFetcher({
+      afterChange: () => this.initHelpers()
     });
+    this.initHelpers();
   }
 
   addListeners() {
     window.addEventListener('hashchange', () => {
-      if(this.swapper instanceof Swapper) {
+      if(this.swapper) {
         this.swapper.open(window.location.hash.replace('#', ''));
       }
     });
   }
 
+  initVideo() {
+    var video = document.getElementById('homepage-video');
+    videoInit(video);
+  }
+
   initSwapper() {
-    if(window.location.pathname.indexOf('overview') !== -1) {
-      this.swapper = new Swapper({
-        itemsContainer: '.topics-list',
-        navItems: '.topics-nav__anchor',
-        items: '.topic-article',
-        beforeOpen: (id, isNext, cb) => {
+    this.swapper = createSwapper();
 
-          if(!isDesktop()) {
-            return cb();
-          }
+    const { hash } = window.location;
 
-          anime({
-            targets: '.topic-articles',
-            opacity: 0,
-            translateY: isNext ? 20 : -20,
-            duration: 300,
-            easing: 'linear',
-            complete: cb
-          });
+    if(hash) {
+      // open the hash id as we assume it's a topic
+      this.swapper.open(hash.replace('#', ''));
+    }
+  }
 
-          window.history.pushState({
-            page: null,
-            hash: id
-          }, id, '#' + id);
-
-        },
-        afterOpen: (id, isNext) => {
-          if(!isDesktop()) {
-            return;
-          }
-          anime({
-            targets: '.topic-articles',
-            translateY: isNext ? [-20, 0] : [20, 0],
-            duration: 300,
-            easing: 'linear',
-            opacity: 1
-          });
-        }
-      });
-
-      const { hash } = window.location;
-
-      if(hash) {
-        this.swapper.open(hash.replace('#', ''));
-      }
-
+  initHelpers() {
+    if(isLocation('overview')) {
+      this.initSwapper();
     } else {
+      this.initVideo();
+
       if(this.swapper instanceof Swapper) {
         this.swapper.destroy();
       }
