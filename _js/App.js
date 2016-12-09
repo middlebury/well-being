@@ -2,6 +2,7 @@ const Swapper = require('./helpers/Swapper');
 const createPageFetcher = require('./createPageFetcher');
 const createSwapper = require('./createSwapper');
 const videoInit = require('./video-init');
+const isTablet = require('./helpers/isTablet');
 
 const isLocation = (path) => window.location.pathname.indexOf(path) !== -1;
 
@@ -29,8 +30,10 @@ class App {
   }
 
   initVideo() {
-    var video = document.getElementById('homepage-video');
-    videoInit(video);
+    if(isTablet()) {
+      var video = document.getElementById('homepage-video');
+      videoInit(video);
+    }
   }
 
   initSwapper() {
