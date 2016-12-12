@@ -27,16 +27,17 @@ module.exports = function createSwapper() {
       });
     },
     afterOpen: (id, isNext) => {
-      if(!isDesktop()) {
-        return;
+      if(isDesktop()) {
+        return anime({
+          targets: '.topic-articles',
+          translateY: isNext ? [-20, 0] : [20, 0],
+          duration: 300,
+          easing: 'linear',
+          opacity: 1
+        });
       }
-      anime({
-        targets: '.topic-articles',
-        translateY: isNext ? [-20, 0] : [20, 0],
-        duration: 300,
-        easing: 'linear',
-        opacity: 1
-      });
+
+      document.getElementById(id).scrollIntoView();
     }
   });
 };
