@@ -1,0 +1,25 @@
+.spinner {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 50px;
+  z-index: 100;
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: darken($color-primary, 5%);
+  border-bottom-color: $color-yellow;
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
