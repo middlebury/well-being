@@ -4,8 +4,8 @@ const PageFetcher = require('./helpers/PageFetcher');
 // if previous state is overview, then the user is navigating home
 const isUrlOverview = url => url.indexOf('overview') >= 0;
 
-const SPINNER_DURATION = 500;
-const ROOT_DURATION = 500;
+const SPINNER_DURATION = 800;
+const ROOT_DURATION = 800;
 
 module.exports = function createPageFetcher({ afterChange }) {
   const root = document.getElementById('root');
