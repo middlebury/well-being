@@ -95,11 +95,6 @@
 }
 
 .hero__video {
-  video {
-    width: auto;
-    height: auto;
-  }
-
   @include media(md) {
     position: absolute;
     top: 0;
@@ -108,9 +103,16 @@
     left: 0;
     overflow: hidden;
     z-index: -100;
+  }
 
-    video {
+  video {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+
+    @include media(md) {
       position: absolute;
+      max-width: none;
       top: 50%;
       left: 50%;
       min-width: 100%;
