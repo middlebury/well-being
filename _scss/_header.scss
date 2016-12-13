@@ -2,17 +2,22 @@
   @include clearfix();
   position: relative;
   border-bottom: 1px solid $color-secondary;
+  z-index: 2;
 
   @include media(md) {
     border: 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
   }
 
-  @include media(xl) {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-    z-index: 5;
+  .has-swapper & {
+    position: relative;
+
+    @include media(xl) {
+      position: fixed;
+    }
   }
 }
 
