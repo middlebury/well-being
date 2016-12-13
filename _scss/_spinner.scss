@@ -11,7 +11,7 @@
   border-style: solid;
   border-width: 2px;
   border-color: darken($color-primary, 5%);
-  border-bottom-color: $color-yellow;
+  border-bottom-color: $color-secondary;
   animation: spinner 1.5s linear infinite;
 }
 
