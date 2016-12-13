@@ -37,7 +37,7 @@ module.exports = function createSwapper() {
         });
       }
 
-      document.getElementById(id).scrollIntoView();
+      document.getElementById('root').scrollIntoView();
     }
   });
 };
