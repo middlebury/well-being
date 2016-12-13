@@ -74,7 +74,7 @@ gulp.task('styles', function() {
       includePaths: ['scss'],
       onError: browserSync.notify
     })).on('error', sass.logError)
-    .pipe(autoprefixer(['last 3 versions'], { cascade: true }))
+    .pipe(autoprefixer(['> 2%', 'last 2 versions']))
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.stream())
     .pipe(gulp.dest('./css'));
