@@ -82,15 +82,17 @@
   }
 
   &:before {
-
+    top: 0;
+    left: calc(100% + 5px);
+    width: 2px;
+    height: 100%;
   }
 
   &:after {
     top: 50%;
-    left: 100%;
+    left: calc(100% + 5px);
     height: 2px;
     width: 500px;
-    background-color: $color-secondary;
   }
 }
 
