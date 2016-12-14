@@ -1,9 +1,10 @@
 <div class="hero">
   <div class="hero__video">
-    <video autoplay preload loop poster="{{ "/img/campus.jpg" | prepend: site.baseurl }}" id="homepage-video">
-      <source type="video/mp4" data-src="{{ "/media/well-being.mp4" | prepend: site.baseurl }}" />
-      <source type="video/webm" data-src="{{ "/media/well-being.webm" | prepend: site.baseurl }}" />
-    </video>
+    <picture data-video-sources="{{ "/media/well-being.mp4" | prepend: site.baseurl }},{{ "/media/well-being.webm" | prepend: site.baseurl }}" data-video-config='{"preload":"auto","autoplay":true,"loop":true,"poster":"{{ "/img/campus.jpg" | prepend: site.baseurl }}"}' id="homepage-picture">
+      <source srcset="{{ "/img/campus.jpg" | prepend: site.baseurl }}" media="(min-width: 1024px)" />
+      <source srcset="{{ "/img/campus.jpg" | prepend: site.baseurl }}" media="(min-width: 768px)" />
+      <img src="{{ "/img/campus.jpg" | prepend: site.baseurl }}" alt="">
+    </picture>
   </div>
   <div class="hero__content">
     <div class="bubble bubble--hero">
