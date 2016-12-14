@@ -1,5 +1,10 @@
 .controls {
   @include clearfix();
+  display: none;
+
+  .swapper--is-open & {
+    display: block;
+  }
 }
 
 .controls__btn {

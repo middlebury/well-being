@@ -1,0 +1,27 @@
+.topics-intro {
+  @include media(lg) {
+    padding-top: 50%;
+  }
+
+  .swapper--is-open & {
+    display: none;
+  }
+}
+
+.topics-intro__content {
+  @include media(lg) {
+    transform: translateY(-50%);
+  }
+}
+
+.topics-intro__text {
+  font-size: 21px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media(lg) {
+    font-size: 24px;
+  }
+}
