@@ -52,7 +52,6 @@ module.exports = function createPageFetcher({ afterChange }) {
           anime({
             targets: root,
             duration: ROOT_DURATION,
-            delay: 100,
             opacity: 1,
             // translateY: isUrlOverview(url) ? [-20, 0] : [20, 0],
             easing: 'linear',
