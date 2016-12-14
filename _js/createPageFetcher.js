@@ -19,7 +19,7 @@ module.exports = function createPageFetcher({ afterChange }) {
         targets: root,
         opacity: 0,
         duration: ROOT_DURATION,
-        translateY: isUrlOverview(url) ? 20 : -20,
+        // translateY: isUrlOverview(url) ? 20 : -20,
         easing: 'linear',
         complete: () => {
 
@@ -54,7 +54,7 @@ module.exports = function createPageFetcher({ afterChange }) {
             duration: ROOT_DURATION,
             delay: 100,
             opacity: 1,
-            translateY: isUrlOverview(url) ? [-20, 0] : [20, 0],
+            // translateY: isUrlOverview(url) ? [-20, 0] : [20, 0],
             easing: 'linear',
             complete: () => {
               root.removeAttribute('style');
