@@ -1,3 +1,7 @@
+if (typeof Promise === 'undefined') {
+  window.Promise = require('promise/lib/es6-extensions.js');
+}
+
 var html = document.documentElement;
 html.classList.add('js');
 html.classList.remove('no-js');
