@@ -53,6 +53,7 @@
   border-top: 1px solid $color-secondary-dark;
   position: relative;
   transition: .2s;
+  outline: 0;
 
   @include media(md) {
     border-top: 0;
