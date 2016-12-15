@@ -55,12 +55,18 @@ $hero-bubble-rotation: 60deg;
       position: relative;
       width: 100%;
       height: 0;
-      padding-bottom: 100%;
+      padding-bottom: 120%;
       border-radius: 50%;
       border-width: 2px;
       border-style: solid;
       border-color: transparent;
       border-left-color: $color-secondary-dark;
+      margin-top: -10%;
+    }
+
+    @include media(xl) {
+      padding-bottom: 100%;
+      margin-top: 0;
     }
   }
 
@@ -72,6 +78,16 @@ $hero-bubble-rotation: 60deg;
       float: left;
       padding-left: 20%;
       z-index: 2;
+    }
+
+    .swapper--is-open & {
+      @include media(lg) {
+        padding-top: 150px;
+      }
+
+      @include media(xxl) {
+        padding-top: 200px;
+      }
     }
   }
 }
