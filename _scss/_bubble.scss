@@ -11,7 +11,6 @@ $hero-bubble-rotation: 60deg;
 
   @include media(md) {
     position: relative;
-    padding: 50% 0;
     border-radius: 50%;
     overflow: hidden;
     background-color: $color-transparent-bg;
