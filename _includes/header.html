@@ -2,8 +2,8 @@
   <div class="site-header__logo">
     <a href="http://www.middlebury.edu">
       <picture>
-        <source srcset="{{ "/img/middlebury-logo.png" || prepend: site.baseurl }}" media="(min-width: 1024px)" />
-        <source srcset="{{ "/img/middlebury-logo-sm.png" || prepend: site.baseurl }}" />
+        <source srcset="{{ "/img/middlebury-logo.png" || prepend: site.baseurl }} 1x, {{ "/img/middlebury-logo@2x.png" || prepend: site.baseurl }} 2x" media="(min-width: 1024px)" />
+        <source srcset="{{ "/img/middlebury-logo-sm.png" || prepend: site.baseurl }} 1x, {{ "/img/middlebury-logo-sm@2x.png" || prepend: site.baseurl }} 2x" />
         <img src="{{ "/img/middlebury-logo.png" | prepend: site.baseurl }}" alt="Middlebury College"/>
       </picture>
     </a>
