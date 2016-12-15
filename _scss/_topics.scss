@@ -12,29 +12,17 @@
   }
 }
 
-.topics__intro {
-  order: 2;
-
-  p {
-    font-size: 21px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include media(lg) {
-      font-size: 24px;
-    }
-  }
-}
-
-.topics__content {
-  // height: 100%;
-}
-
 .topics-list {
   order: 1;
   position: relative;
+
+  .has-swapper & {
+    // display: none;
+  }
+
+  .swapper--is-open & {
+    // display: block;
+  }
 }
 
 .topic-article {

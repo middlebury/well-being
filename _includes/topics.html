@@ -1,15 +1,5 @@
 <div class="topics">
 
-  <div class="topics__intro">
-    <div class="topics__content">
-      <div class="bubble bubble--gradient bubble--intro">
-        <div class="bubble__content">
-          <p>You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
-          <p>And we are here to help.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <nav class="topics-nav">
     <ul class="topics-nav__list">
@@ -29,8 +19,15 @@
   </nav>
 
   <section class="topics-list">
-    <div class="bubble bubble--gradient bubble--topics">
+    <div class="bubble bubble--topics">
       <div class="bubble__content">
+
+        <div class="topics-intro">
+          <div class="topics-intro__content">
+            <p class="topics-intro__text">You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
+            <p class="topics-intro__text">And we are here to help.</p>
+          </div>
+        </div>
 
         <div class="topic-articles">
           {% for topic in site.data.topics %}
