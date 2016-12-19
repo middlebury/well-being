@@ -90,7 +90,9 @@ gulp.task('build', ['jekyll-build', 'scripts', 'styles']);
 
 gulp.task('deploy', ['build'], function() {
   return gulp.src('./_site/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({
+      branch: 'site'
+    }));
 });
 
 gulp.task('default', ['build', 'browser-sync', 'watch']);
