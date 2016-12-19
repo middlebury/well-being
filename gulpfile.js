@@ -88,7 +88,7 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['jekyll-build', 'scripts', 'styles']);
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', function() {
   return gulp.src('./_site/**/*')
     .pipe(ghPages({
       branch: 'site'

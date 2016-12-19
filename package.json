@@ -6,6 +6,7 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production",
+    "deploy": "npm run build && gulp deploy",
     "deploy:sandcat": "npm run build && npm run copy:sandcat",
     "copy:sandcat": "cp -r _site/ /../../Volumes/middfiles/webroots/comm/well-being",
     "test": "echo \"Error: no test specified\" && exit 1"
