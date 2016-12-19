@@ -14,6 +14,11 @@ module.exports = function createPageFetcher({ afterChange }) {
   return new PageFetcher({
     root,
     beforeChange: (url, cb) => {
+
+      history.pushState({
+        page: url || '/'
+      }, url, url);
+
       // animate the root div out
       anime({
         targets: root,

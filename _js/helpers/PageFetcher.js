@@ -122,10 +122,6 @@ class PageFetcher {
     }
 
     this.beforePageChange(href, () => {
-      history.pushState({
-        page: href || '/'
-      }, href, href);
-
       this.loadPage(href).then(() => {
         this.afterPageChange(href);
       });
