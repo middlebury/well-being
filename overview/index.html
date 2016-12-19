@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Middlebury Well-Being</title>
-    <meta name="description" content="">
+    <meta name="description" content="Find the opportunities, resources, and support to help you engage in your well-being at Middlebury.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/7327752/css/fonts.css">
-    <link rel="stylesheet" href="/well-being/css/main.css">
+    <link rel="shortcut icon" href="/img/midd_favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css">
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
     <header class="site-header">
   <div class="site-header__logo">
     <a href="http://www.middlebury.edu">
       <picture>
-        <source srcset="/well-being/img/middlebury-logo.png" media="(min-width: 1024px)" />
-        <source srcset="/well-being/img/middlebury-logo-sm.png" />
-        <img src="/well-being/img/middlebury-logo.png" alt="Middlebury College"/>
+        <source srcset="/img/middlebury-logo.png 1x, /img/middlebury-logo@2x.png 2x" media="(min-width: 1024px)" />
+        <source srcset="/img/middlebury-logo-sm.png 1x, /img/middlebury-logo-sm@2x.png 2x" />
+        <img src="/img/middlebury-logo.png" alt="Middlebury College"/>
       </picture>
     </a>
   </div>
   <div class="site-header__title">
-    <h1 class="site-title"><a href="/well-being" class="site-title__link" data-fetch-me>Your well-being</a></h1>
+    <h1 class="site-title"><a href="/" class="site-title__link" data-fetch-me>Your well-being</a></h1>
   </div>
 </header>
 
@@ -27,16 +30,6 @@
       <section class="section section--topics">
   <div class="topics">
 
-  <div class="topics__intro">
-    <div class="topics__content">
-      <div class="bubble bubble--gradient bubble--intro">
-        <div class="bubble__content">
-          <p>You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
-          <p>And we are here to help.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <nav class="topics-nav">
     <ul class="topics-nav__list">
@@ -100,13 +93,20 @@
     </ul>
 
     <div class="suggestions">
-      <a href="#" class="suggestions__link">Suggestions?</a>
+      <a href="https://forms.middlebury.edu/offices/campuslife/well-being" class="suggestions__link">Suggestions?</a>
     </div>
   </nav>
 
   <section class="topics-list">
-    <div class="bubble bubble--gradient bubble--topics">
+    <div class="bubble bubble--topics">
       <div class="bubble__content">
+
+        <div class="topics-intro">
+          <div class="topics-intro__content">
+            <p class="topics-intro__text">You can be actively engaged in your well-being—your health, your safety, your place in the world.</p>
+            <p class="topics-intro__text">And we are here to help.</p>
+          </div>
+        </div>
 
         <div class="topic-articles">
           
@@ -364,6 +364,9 @@
 </section>
 
     </div>
-    <script src="/well-being/js/bundle.js"></script>
+    <div class="spinner-container">
+      <div class="spinner" id="spinner"></div>
+    </div>
+    <script src="/js/bundle.js"></script>
   </body>
 </html>
