@@ -37,9 +37,11 @@
               <h2 class="topic-article__subtitle">Resources</h2>
               <ul class="resource-list">
                 {% for item in topic.resources %}
-                <li>
-                  <a href="{{item.url}}">{{item.title}}</a>
-                </li>
+                  {% unless item.url == '#' %}
+                    <li>
+                      <a href="{{item.url}}">{{item.title}}</a>
+                    </li>
+                  {% endunless %}
                 {% endfor %}
               </ul>
             </article>
