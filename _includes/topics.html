@@ -5,7 +5,7 @@
     <ul class="topics-nav__list">
       {% for topic in site.data.topics %}
       <li class="topics-nav__item">
-        <a href="#{{topic.title | slugify}}" class="topics-nav__anchor">
+        <a href="#{{topic.title | slugify}}" class="topics-nav__anchor" data-ga-event="{{topic.title}}">
           <strong class="topics-nav__title">{{topic.title}}</strong>
           <p class="topics-nav__summary">{{topic.summary}}</p>
         </a>
@@ -48,9 +48,9 @@
           {% endfor %}
           <div class="topic-controls">
             <div class="controls">
-              <button class="controls__btn controls__btn--prev" id="prev"><span class="controls__icon">&larr;</span> Previous</button>
-              <button class="controls__btn controls__btn--next" id="next">Next <span class="controls__icon">&rarr;</span></button>
-              <button class="controls__btn controls__btn--close" id="close">Close <span class="controls__icon">&times;</span></button>
+              <button class="controls__btn controls__btn--prev" id="prev" data-ga-event="Previous"><span class="controls__icon">&larr;</span> Previous</button>
+              <button class="controls__btn controls__btn--next" id="next" data-ga-event="Next">Next <span class="controls__icon">&rarr;</span></button>
+              <button class="controls__btn controls__btn--close" id="close" data-ga-event="Close">Close <span class="controls__icon">&times;</span></button>
             </div>
           </div>
         </div>
