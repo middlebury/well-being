@@ -96,7 +96,7 @@ button {
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start;
-      height: 80px;
+      height: 70px;
       width: 300px;
       background-color: transparent;
       overflow: visible; } }
@@ -187,12 +187,12 @@ button {
 .hero__subtitle {
   font-weight: 600; }
 
-.hero__para {
+.hero__text {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px; }
   @media (min-width: 768px) {
-    .hero__para {
+    .hero__text {
       font-size: 20px; } }
 
 .hero__button-container {
@@ -495,7 +495,7 @@ button {
 
 @media (min-width: 1024px) {
   .topics-intro {
-    padding-top: 50%; } }
+    padding-top: 65%; } }
 
 .swapper--is-open .topics-intro {
   display: none; }
@@ -506,12 +506,13 @@ button {
             transform: translateY(-50%); } }
 
 .topics-intro__text {
-  font-size: 21px; }
+  font-size: 18px;
+  line-height: 1.8; }
   .topics-intro__text:last-child {
     margin-bottom: 0; }
   @media (min-width: 1024px) {
     .topics-intro__text {
-      font-size: 24px; } }
+      font-size: 20px; } }
 
 .controls {
   display: none; }
@@ -564,12 +565,12 @@ button {
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  overflow: hidden; }
   @media (min-width: 768px) {
     .bubble--hero {
       position: relative;
       border-radius: 50%;
-      overflow: hidden;
       background-color: rgba(5, 25, 25, 0.7);
       height: 700px;
       width: 700px;
@@ -624,6 +625,7 @@ button {
         position: relative;
         float: left;
         padding-left: 20%;
+        padding-right: 20%;
         z-index: 2; } }
     @media (min-width: 1024px) {
       .swapper--is-open .bubble--topics .bubble__content {
