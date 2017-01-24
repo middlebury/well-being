@@ -2,7 +2,11 @@ if (typeof Promise === 'undefined') {
   window.Promise = require('promise/lib/es6-extensions.js');
 }
 
+// fetch polyfill for ie11
+require('whatwg-fetch');
+
 require('./ga-events');
+require('./events')();
 
 var html = document.documentElement;
 html.classList.add('js');

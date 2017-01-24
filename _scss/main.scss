@@ -13,3 +13,10 @@
 @import 'bubble';
 @import 'suggestions';
 @import 'spinner';
+
+
+#event-feed {
+  overflow: auto;
+  height: 100%;
+  margin: 100px;
+}
