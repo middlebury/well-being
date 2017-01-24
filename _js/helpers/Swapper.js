@@ -157,6 +157,8 @@ class Swapper {
 
     document.body.classList.remove(this.openBodyClass);
 
+    window.scrollTo(0, 0);
+
     this.removeActiveNavItemClass();
   }
 
