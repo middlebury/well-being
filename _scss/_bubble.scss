@@ -8,11 +8,11 @@ $hero-bubble-rotation: 60deg;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   @include media(md) {
     position: relative;
     border-radius: 50%;
-    overflow: hidden;
     background-color: $color-transparent-bg;
     height: 700px;
     width: 700px;
