@@ -1,6 +1,6 @@
 .topics-intro {
   @include media(lg) {
-    padding-top: 50%;
+    padding-top: 65%;
   }
 
   .swapper--is-open & {
@@ -16,7 +16,7 @@
 
 .topics-intro__text {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.8;
 
   &:last-child {
     margin-bottom: 0;
