@@ -23,7 +23,7 @@ module.exports = function(picture) {
     // create a source element
     var source = document.createElement('source');
 
-    // set the src attribuet
+    // set the src attribute
     source.src = src;
 
     // set the type attribute based on the source url filetype
