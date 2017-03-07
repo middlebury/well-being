@@ -651,7 +651,7 @@ button {
   transition: .2s;
   display: block;
   border-top: 1px solid #75a3cd;
-  padding: 20px; }
+  padding: 20px 10px; }
   .suggestions__link:hover {
     color: #f4b824; }
 
