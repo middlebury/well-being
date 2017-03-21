@@ -49,7 +49,7 @@ button {
       top: 0; } }
   .has-swapper .site-header {
     position: relative; }
-    @media (min-width: 1280px) {
+    @media (min-width: 1440px) {
       .has-swapper .site-header {
         position: fixed; } }
 
@@ -89,10 +89,9 @@ button {
   @media (min-width: 768px) {
     .site-header__title {
       left: auto;
-      top: auto;
+      top: -10px;
       -webkit-transform: none;
               transform: none;
-      float: left;
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start;
@@ -116,6 +115,7 @@ button {
     @media (min-width: 768px) {
       .site-header__title:after {
         right: -70%;
+        bottom: 5px;
         -webkit-transform: none;
                 transform: none;
         left: auto; } }
@@ -148,13 +148,19 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     height: auto; } }
+
+@media (min-width: 1024px) {
+  .section--topics {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; } }
 
 @media (min-width: 1280px) {
   .section--topics {
@@ -326,7 +332,38 @@ button {
 .topics-nav {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
-          order: 2; }
+          order: 2;
+  position: relative; }
+  .topics-nav:before {
+    content: '';
+    display: block;
+    -webkit-transition: border-color .2s;
+    transition: border-color .2s; }
+    @media (min-width: 1024px) {
+      .topics-nav:before {
+        height: 1000px;
+        width: 800px;
+        position: absolute;
+        left: 100%;
+        top: -30%;
+        background: -webkit-radial-gradient(circle, #144F78, #0d395f 70%);
+        background: radial-gradient(circle, #144F78, #0d395f 70%);
+        border-radius: 50%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: transparent;
+        border-left-color: #75a3cd; } }
+    @media (min-width: 1280px) {
+      .topics-nav:before {
+        top: -25%; } }
+    @media (min-width: 1440px) {
+      .topics-nav:before {
+        top: -20%; } }
+    @media (min-width: 1920px) {
+      .topics-nav:before {
+        top: -10%; } }
+    .swapper--is-open .topics-nav:before {
+      border-left-color: #f4b824; }
   @media (min-width: 768px) {
     .topics-nav {
       max-width: 500px;
@@ -595,44 +632,14 @@ button {
   @media (min-width: 1024px) {
     .bubble--topics {
       background: none; } }
-  .bubble--topics:after {
-    display: block;
-    content: ''; }
-    .swapper--is-open .bubble--topics:after {
-      border-left-color: #f4b824; }
-    @media (min-width: 1024px) {
-      .bubble--topics:after {
-        background: -webkit-radial-gradient(circle, #144F78, #0d395f 70%);
-        background: radial-gradient(circle, #144F78, #0d395f 70%);
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-bottom: 120%;
-        border-radius: 50%;
-        border-width: 2px;
-        border-style: solid;
-        border-color: transparent;
-        border-left-color: #75a3cd;
-        margin-top: -10%; } }
-    @media (min-width: 1280px) {
-      .bubble--topics:after {
-        padding-bottom: 100%;
-        margin-top: 0; } }
   .bubble--topics .bubble__content {
     padding: 100px 30px 60px; }
     @media (min-width: 1024px) {
       .bubble--topics .bubble__content {
-        position: relative;
-        float: left;
-        padding-left: 20%;
-        padding-right: 20%;
-        z-index: 2; } }
-    @media (min-width: 1024px) {
-      .swapper--is-open .bubble--topics .bubble__content {
-        padding-top: 150px; } }
+        padding: 0 20%; } }
     @media (min-width: 1440px) {
       .swapper--is-open .bubble--topics .bubble__content {
-        padding-top: 200px; } }
+        padding-top: 100px; } }
 
 .suggestions {
   text-align: center; }
