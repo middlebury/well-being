@@ -13,9 +13,13 @@
 .section--topics {
   @include media(md) {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     height: auto;
+  }
+
+  @include media(lg) {
+    align-items: center;
   }
 
   @include media(xl) {
