@@ -15,7 +15,7 @@
   .has-swapper & {
     position: relative;
 
-    @include media(xl) {
+    @include media(xxl) {
       position: fixed;
     }
   }
