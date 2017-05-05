@@ -104,6 +104,7 @@ class Swapper {
 
   handleNavItemClick(e) {
     e.preventDefault();
+    return;
 
     const elem = e.currentTarget;
     const href = elem.getAttribute('href');
