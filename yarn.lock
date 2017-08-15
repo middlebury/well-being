@@ -1985,7 +1985,7 @@ gulp-gh-pages@^0.5.4:
     vinyl-fs "^2.2.1"
     wrap-promise "^1.0.1"
 
-gulp-sass:
+gulp-sass@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/gulp-sass/-/gulp-sass-2.3.2.tgz#82b7ab90fe902cdc34c04f180d92f2c34902dd52"
   dependencies:

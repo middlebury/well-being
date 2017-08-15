@@ -33,6 +33,7 @@
   "dependencies": {
     "animejs": "^1.1.1",
     "gulp-gh-pages": "^0.5.4",
+    "gulp-sass": "^2.3.2",
     "promise": "^7.1.1",
     "whatwg-fetch": "^2.0.1",
     "yargs": "^6.5.0"
