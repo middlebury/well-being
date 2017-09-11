@@ -696,3 +696,14 @@ button {
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.note {
+  font-size: 10px;
+  opacity: 0.8;
+  text-align: center; }
+  @media (min-width: 1024px) {
+    .note {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      margin: 0; } }
