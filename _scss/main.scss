@@ -13,3 +13,16 @@
 @import 'bubble';
 @import 'suggestions';
 @import 'spinner';
+
+.note {
+  font-size: 10px;
+  opacity: 0.8;
+  text-align: center;
+
+  @include media(lg) {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    margin: 0;
+  }
+}
