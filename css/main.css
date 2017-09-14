@@ -698,17 +698,22 @@ button {
             transform: rotate(360deg); } }
 
 .note {
-  font-size: 10px;
-  opacity: 0.8;
-  text-align: center; }
-  @media (min-width: 1024px) {
-    .note {
+  padding: 20px; }
+  .note p {
+    font-size: 10px;
+    opacity: 0.8;
+    margin: 0;
+    text-align: center; }
+    @media (min-width: 1024px) {
+      .note p {
+        text-align: right; } }
+  @media (min-width: 768px) {
+    body:not(.has-swapper) .note {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      margin: 0; } }
-  body:not(.has-swapper) .note {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    margin: 0; }
+      bottom: 0;
+      right: 0; } }
+  @media (min-width: 1440px) {
+    .has-swapper .note {
+      position: fixed;
+      right: 0;
+      bottom: 0; } }
