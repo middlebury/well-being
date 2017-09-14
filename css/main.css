@@ -707,3 +707,8 @@ button {
       right: 20px;
       bottom: 20px;
       margin: 0; } }
+  body:not(.has-swapper) .note {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    margin: 0; }
