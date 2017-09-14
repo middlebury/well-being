@@ -15,14 +15,32 @@
 @import 'spinner';
 
 .note {
-  font-size: 10px;
-  opacity: 0.8;
-  text-align: center;
+  padding: 20px;
 
-  @include media(lg) {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+  p {
+    font-size: 10px;
+    opacity: 0.8;
     margin: 0;
+    text-align: center;
+
+    @include media(lg) {
+      text-align: right;
+    }
+  }
+
+  @include media(md) {
+    body:not(.has-swapper) & {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  @include media(xxl) {
+    .has-swapper & {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
