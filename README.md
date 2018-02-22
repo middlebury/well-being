@@ -3,7 +3,7 @@
 ## Requirements
 - [Jekyll](http://jekyllrb.com/) `sudo gem install jekyll`
 - [NodeJS](https://nodejs.org/en/) v6.4+
-- [Yarn](https://yarnpkg.com/en/docs/install) (optional) `brew install yarn`
+- [Yarn](https://yarnpkg.com/en/docs/install) (optional) `npm install --global yarn`
 
 ## Getting started
 

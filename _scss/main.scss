@@ -14,9 +14,21 @@
 @import 'suggestions';
 @import 'spinner';
 
-
 #event-feed {
   overflow: auto;
   height: 100%;
   margin: 100px;
+}
+
+.note {
+  font-size: 10px;
+  opacity: 0.8;
+  text-align: center;
+
+  @include media(lg) {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    margin: 0;
+  }
 }

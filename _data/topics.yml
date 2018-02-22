@@ -10,10 +10,10 @@
       url: http://go.middlebury.edu/cci
     - title: Center for Creativity, Innovation, and Social Entrepreneurship
       url: http://go.middlebury.edu/ccise
-    - title: Faculty Development Funding
-      url: http://www.middlebury.edu/academics/administration/professional\_development/funding
-    - title: Staff Development Funding
-      url: http://www.middlebury.edu/offices/business/hr/Learninganddevelopment/StaffDevelopmentSupport
+    - title: Integrative Health Coaching for employees
+      url: http://sites.middlebury.edu/middleburyintegratedhealthcoach/
+    - title: Center for Teaching, Learning, and Research
+      url: http://www.middlebury.edu/academics/resources/ctlr
 
 - title: Movement and Rest
   summary: Get the exercise and sleep that feels right for your body.
@@ -23,7 +23,7 @@
       url: http://athletics.middlebury.edu/facilities/facilities_hours
     - title: Trail Around Middlebury
       url: http://www.maltvt.org/trail/tam-trail/
-    - title: Wellness Committee-sponsored classes
+    - title: Well-being Committee for classes
       url: http://sites.middlebury.edu/wellness/events/
     - title: Understanding Sleep
       url: http://www.middlebury.edu/student-life/health-wellness-education-and-safety/education/sleep
@@ -37,28 +37,22 @@
     - title: Dining services
       url: http://www.middlebury.edu/student-life/community-living/dining-services
     - title: Middlebury College Farm and Food Project
-      url: http://www.middlebury.edu/sustainability/food/farm (The Organic Farm)
+      url: http://www.middlebury.edu/sustainability/food/farm
     - title: "E4health: Healthy Eating"
       url: http://www.helloe4.com/774-2/healthy-eating/
-    - title: Meet with a nutritionist
-      url:  http://www.middlebury.edu/studentlife-older/services/cchr/students/Nutrition
-    - title: Become a nutrition outreach mentor
-      url: http://www.middlebury.edu/studentlife-older/services/cchr/students/Nutrition
 
 - title: Spirituality
-  summary: Find what fulfills you in life.
+  summary: Find what gives meaning, purpose, and fulfillment.
   content: How do your beliefs and values guide your actions and emotions? Spiritual well-being can happen on many levels, and is different for everyone. With that in mind, we help create the spaces and opportunities for you to take time to pause and consider what&#39;s important to you, what gives you a sense of purpose, and what grounds you in this community.
   resources:
     - title: Scott Center for Spiritual Life
       url: http://www.middlebury.edu/student-life/community-living/diversity-inclusivity/scott-center
     - title: Local Congregations
-      url: http://www.middlebury.edu/student-life/community-living/diversity-inclusivity/scott-center/congregations and Faith Communities
+      url: http://www.middlebury.edu/student-life/community-living/diversity-inclusivity/scott-center/congregations
     - title: The Spirit and Nature Walking Trails
       url: http://www.spiritinnature.org/the-paths/
     - title: Yoga
       url: http://sites.middlebury.edu/contemplativepractice/yoga/
-    - title: Meditation
-      url: '#'
     - title: Employee and Family Assistance Program
       url: http://www.middlebury.edu/offices/business/hr/staffandfaculty/benefits/EFAP
 
@@ -81,14 +75,16 @@
   summary: Be fully present in your everyday life.
   content: How do your mind and body inform each other in your experiences? A 2010 Harvard study determined that the average person is distracted from what they&#39;re doing for 47 percent of their day. That&#39;s not all that surprising given our digital age and the fast-paced and exhilarating academic environment at Middlebury. Contemplative practices and reflection can help. They are two strategies to help you be fully present in the moment and feel more in touch with how you move through the day.
   resources:
-    - title: Weekly Reflection time at Mead Chapel
-      url: http://www.middlebury.edu/taxonomy/term/44030
+    - title: Meditation Opportunities
+      url: http://sites.middlebury.edu/wellness/category/mindfullness/
     - title: Mindfulness@Middlebury
       url: http://sites.middlebury.edu/mindfulness/
     - title: Employee and Family Assistance Program
       url: http://www.middlebury.edu/offices/business/hr/staffandfaculty/benefits/EFAP
-    - title: Wellness Committee-sponsored classes
+    - title: Well-being Committee for classes
       url: http://sites.middlebury.edu/wellness/events/
+    - title: Parton Center for Health and Wellness
+      url: http://www.middlebury.edu/student-life/health-wellness-education-and-safety/Parton-Center
 
 - title: Community
   summary: Foster meaningful relationships.
@@ -104,14 +100,20 @@
       url: https://www.unitedwayaddisoncounty.org/volunteer
     - title: Center for Community Engagement
       url: http://www.middlebury.edu/student-life/creativity-innovation-exploration/engagement-careers/community-engagement
+    - title: Green Dot Violence Prevention Strategy
+      url: http://sites.middlebury.edu/greendot/
 
 - title: Financial
   summary: Take charge of your financial goals—now and for later.
   content: How do you balance your wants and needs? From your first piggy bank to your current savings account, financial responsibility can be enormously empowering. With help from money-coaching programs like My Secure Advantage and the incredible team in Student Financial Services, you can define and set goals for both the near and long term—and also see and understand how things work best in the world of savings.
   resources:
-    - title: My Secure Advantage
-      url: '#'
-    - title: Working Bridges On-campus United Way Workplace Resource Coordinator
-      url: '#'
+    # - title: My Secure Advantage
+    #   url: '#'
+    # - title: Working Bridges On-campus United Way Workplace Resource Coordinator
+    #   url: '#'
     - title: Student Financial Services
       url: http://www.middlebury.edu/offices/support/sfs
+    - title: United Way of Addison County Tax Assistance
+      url: https://www.unitedwayaddisoncounty.org/freetaxhelp
+    - title: Employee and Family Assistance Program
+      url: http://www.middlebury.edu/offices/business/hr/staffandfaculty/benefits/EFAP

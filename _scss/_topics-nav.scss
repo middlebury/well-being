@@ -1,5 +1,42 @@
 .topics-nav {
   order: 2;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    transition: border-color .2s;
+
+    @include media(lg) {
+      height: 1000px;
+      width: 800px;
+      position: absolute;
+      left: 100%;
+      top: -30%;
+      background: radial-gradient(circle, #144F78, $color-primary 70%);
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: transparent;
+      border-left-color: $color-secondary-dark;
+    }
+
+    @include media(xl) {
+      top: -25%;
+    }
+
+    @include media(xxl) {
+      top: -20%;
+    }
+
+    @include media(xxxl) {
+      top: -10%;
+    }
+
+    .swapper--is-open & {
+      border-left-color: $color-yellow;
+    }
+  }
 
   @include media(md) {
     max-width: 500px;

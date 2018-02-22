@@ -15,7 +15,7 @@
   .has-swapper & {
     position: relative;
 
-    @include media(xl) {
+    @include media(xxl) {
       position: fixed;
     }
   }
@@ -52,9 +52,8 @@
 
   @include media(md) {
     left: auto;
-    top: auto;
+    top: -10px;
     transform: none;
-    float: left;
     justify-content: flex-start;
     height: 70px;
     width: 300px;
@@ -77,6 +76,7 @@
 
     @include media(md) {
       right: -70%;
+      bottom: 5px;
       transform: none;
       left: auto;
     }

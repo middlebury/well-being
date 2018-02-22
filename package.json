@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build --production",
+    "build": "JEKYLL_ENV=production gulp build --production",
     "deploy": "npm run build && gulp deploy",
     "deploy:sandcat": "npm run build && npm run copy:sandcat",
     "copy:sandcat": "cp -r _site/ /../../Volumes/middfiles/webroots/comm/well-being",
@@ -22,17 +22,18 @@
     "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-sass": "^2.3.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
     "animejs": "^1.1.1",
-    "gulp-gh-pages": "^0.5.4",
     "promise": "^7.1.1",
     "whatwg-fetch": "^2.0.1",
     "yargs": "^6.5.0"
