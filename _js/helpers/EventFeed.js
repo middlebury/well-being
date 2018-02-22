@@ -1,8 +1,5 @@
 class EventFeed {
-  constructor({
-    url,
-    container
-  }) {
+  constructor({ url, container }) {
     this.feedUrl = url;
     this.container = container;
 
@@ -14,7 +11,9 @@ class EventFeed {
       var data = this.data;
       console.log(data);
 
-      var events = data.items.sort((a, b) => new Date(a.start.dateTime) - new Date(b.start.dateTime));
+      var events = data.items.sort(
+        (a, b) => new Date(a.start.dateTime) - new Date(b.start.dateTime)
+      );
 
       var list = this.createItemList(events);
 
@@ -25,26 +24,22 @@ class EventFeed {
   }
 
   fetchFeed() {
-    if(!this.feedUrl) {
+    if (!this.feedUrl) {
       throw new Error('Must provide a feed url');
     }
-    return window.fetch(this.feedUrl)
+    return window
+      .fetch(this.feedUrl)
       .then(res => res.json())
       .then(data => {
         this.data = data;
-      }).catch(err => {
+      })
+      .catch(err => {
         this.error = err;
         console.log(err);
       });
   }
 
-  createItem({
-    title,
-    date,
-    description,
-    location,
-    link
-  }) {
+  createItem({ title, date, description, location, link }) {
     var div = document.createElement('div');
 
     var content = `
