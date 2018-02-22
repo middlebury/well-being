@@ -47,26 +47,14 @@ class EventFeed {
   }) {
     var div = document.createElement('div');
 
-    var h1 = document.createElement('h1');
-    var anchor = document.createElement('a');
-    anchor.setAttribute('href', link);
-    anchor.appendChild(document.createTextNode(title));
-    h1.appendChild(anchor);
+    var content = `
+      <h1><a href="${link}">${title}</a></h1>
+      <p>${new Date(date).toLocaleDateString()}</p>
+      <p>${location}</p>
+      <p>${description}</p>
+    `;
 
-    var text = document.createElement('p');
-    text.appendChild(document.createTextNode(description));
-
-    var loc = document.createElement('p');
-    loc.appendChild(document.createTextNode(location));
-
-    var meta = document.createElement('p');
-    var timestamp = new Date(date);
-    meta.appendChild(document.createTextNode(timestamp.toLocaleString()));
-
-    div.appendChild(h1);
-    div.appendChild(meta);
-    div.appendChild(loc);
-    div.appendChild(text);
+    div.innerHTML = content;
 
     return div;
   }
