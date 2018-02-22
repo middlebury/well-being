@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build --production",
+    "build": "JEKYLL_ENV=production gulp build --production",
     "deploy": "npm run build && gulp deploy",
     "deploy:sandcat": "npm run build && npm run copy:sandcat",
     "copy:sandcat": "cp -r _site/ /../../Volumes/middfiles/webroots/comm/well-being",
