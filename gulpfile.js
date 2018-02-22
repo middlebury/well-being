@@ -8,6 +8,8 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var babelify = require('babelify');
 var ghPages = require('gulp-gh-pages');
+var gulpif = require('gulp-if');
+var cssnano = require('gulp-cssnano');
 var browserSync = require('browser-sync');
 var cp = require('child_process');
 var beeper = require('beeper');
@@ -73,6 +75,7 @@ gulp.task('styles', function() {
       onError: browserSync.notify
     })).on('error', sass.logError)
     .pipe(autoprefixer(['> 2%', 'last 2 versions']))
+    .pipe(gulpif(production, cssnano()))
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.stream())
     .pipe(gulp.dest('./css'));
