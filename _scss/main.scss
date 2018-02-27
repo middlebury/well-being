@@ -15,9 +15,13 @@
 @import 'spinner';
 
 #event-feed {
-  overflow: auto;
+  // overflow: auto;
   height: 100%;
   margin: 100px;
+}
+
+body.events {
+  overflow: auto;
 }
 
 .note {

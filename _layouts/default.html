@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}">
   </head>
-  <body>
+  <body class="{{page.body_class}}">
     {% include header.html %}
     <div id="root">
       {{content}}
