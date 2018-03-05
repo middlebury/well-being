@@ -26,3 +26,15 @@
     height: 100vh;
   }
 }
+
+.section--events {
+  @include media(md) {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  @include media(lg) {
+    align-items: center;
+  }
+}

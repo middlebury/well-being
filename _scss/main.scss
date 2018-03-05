@@ -14,13 +14,7 @@
 @import 'subnav';
 @import 'spinner';
 
-#event-feed {
-  // overflow: auto;
-  height: 100%;
-  margin: 100px;
-}
-
-body.events {
+body.events-page {
   overflow: auto;
 }
 
@@ -35,4 +29,19 @@ body.events {
     bottom: 20px;
     margin: 0;
   }
+}
+
+.events {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 80px;
+}
+
+.events__title {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.events__nav {
+  margin-bottom: 20px;
 }
