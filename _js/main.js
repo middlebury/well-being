@@ -6,7 +6,6 @@ if (typeof Promise === 'undefined') {
 require('whatwg-fetch');
 
 require('./ga-events');
-require('./events')();
 
 var html = document.documentElement;
 html.classList.add('js');
