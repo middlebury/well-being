@@ -1,6 +1,3 @@
-// fetch polyfill for ie11
-require('whatwg-fetch');
-
 const isFunction = require('./isFunction');
 
 /**

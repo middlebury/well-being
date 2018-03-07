@@ -3,6 +3,12 @@
  * @param  {Element} picture - the picture DOM element
  */
 module.exports = function(picture) {
+
+  // make sure picture element is passed
+  if(!picture) {
+    return;
+  }
+
   // set the parent container of the picture element so we can change its children
   var container = picture.parentElement;
 

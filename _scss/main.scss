@@ -11,8 +11,12 @@
 @import 'topics-intro';
 @import 'controls';
 @import 'bubble';
-@import 'suggestions';
+@import 'subnav';
 @import 'spinner';
+
+body.events-page {
+  overflow: auto;
+}
 
 .note {
   font-size: 10px;
@@ -25,4 +29,19 @@
     bottom: 20px;
     margin: 0;
   }
+}
+
+.events {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 80px;
+}
+
+.events__title {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.events__nav {
+  margin-bottom: 20px;
 }
