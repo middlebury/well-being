@@ -38,5 +38,11 @@
     "promise": "^7.1.1",
     "whatwg-fetch": "^2.0.1",
     "yargs": "^6.5.0"
+  },
+  "resolutions": {
+    "lodash": "^4.17.14",
+    "minimatch": "^3.0.2",
+    "js-yaml": "^3.13.0",
+    "braces": "^2.3.1"
   }
 }
