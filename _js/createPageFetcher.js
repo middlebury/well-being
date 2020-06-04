@@ -1,23 +1,26 @@
-const anime = require('animejs');
-const PageFetcher = require('./helpers/PageFetcher');
+import anime from 'animejs';
+import PageFetcher from './helpers/PageFetcher';
 
 // if previous state is overview, then the user is navigating home
-const isUrlOverview = url => url.indexOf('overview') >= 0;
+const isUrlOverview = (url) => url.indexOf('overview') >= 0;
 
 const SPINNER_DURATION = 800;
 const ROOT_DURATION = 800;
 
-module.exports = function createPageFetcher({ afterChange }) {
+export default function createPageFetcher({ afterChange }) {
   const root = document.getElementById('root');
   const spinner = document.getElementById('spinner');
 
   return new PageFetcher({
     root,
     beforeChange: (url, cb) => {
-
-      history.pushState({
-        page: url || '/'
-      }, url, url);
+      history.pushState(
+        {
+          page: url || '/'
+        },
+        url,
+        url
+      );
 
       // animate the root div out
       anime({
@@ -27,7 +30,6 @@ module.exports = function createPageFetcher({ afterChange }) {
         // translateY: isUrlOverview(url) ? 20 : -20,
         easing: 'linear',
         complete: () => {
-
           // show spinner
           spinner.style.display = 'block';
 
@@ -42,7 +44,6 @@ module.exports = function createPageFetcher({ afterChange }) {
       });
     },
     afterChange: (url) => {
-
       // App needs to re-run initHelpers to re-instance the swapper or video background
       afterChange();
 
@@ -52,7 +53,6 @@ module.exports = function createPageFetcher({ afterChange }) {
         duration: SPINNER_DURATION,
         opacity: 0,
         complete: () => {
-
           // show root container
           anime({
             targets: root,
@@ -68,4 +68,4 @@ module.exports = function createPageFetcher({ afterChange }) {
       });
     }
   });
-};
+}

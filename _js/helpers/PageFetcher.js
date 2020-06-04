@@ -1,4 +1,9 @@
-const isFunction = require('./isFunction');
+import 'promise-polyfill/src/polyfill';
+
+import fetch from 'unfetch';
+import isFunction from './isFunction';
+
+// window.Promise = Promise;
 
 /**
  * Fetches content from link urls and updates window history state and inserts fetched content into root div.
@@ -10,7 +15,7 @@ class PageFetcher {
     fetchSelector = '#root',
     dataAttr = 'fetch-me',
     beforeChange,
-    afterChange,
+    afterChange
   }) {
     /**
      * The root element to insert fetched content into.
@@ -56,49 +61,55 @@ class PageFetcher {
     window.addEventListener('popstate', this.handlePopState.bind(this));
 
     // dynamically listen for link clicks that have the data attribute
-    document.body.addEventListener('click', e => {
+    document.body.addEventListener('click', (e) => {
       // check if the data- attribute is on the target
-      if(e.target.getAttribute(`data-${this.dataAttr}`) !== null) {
+      if (e.target.getAttribute(`data-${this.dataAttr}`) !== null) {
         this.handleLinkClick(e);
       }
     });
   }
 
   loadPage(url) {
-    return fetch(url)
-      // turn the response into text
-      .then(res => res.text())
-      // parse the text response so we can only fetch content from the pages root div
-      .then(text => new window.DOMParser().parseFromString(text, 'text/html'))
-      // insert the fetched content into the root div
-      .then(html => {
-        this.root.innerHTML = html.querySelector(this.fetchSelector).innerHTML;
-      })
-      // listen for errors and "redirect" the user if fetching doesn't happen
-      .catch(err => {
-        console.error(err);
-        window.location = url;
-      });
+    return (
+      fetch(url)
+        // turn the response into text
+        .then((res) => res.text())
+        // parse the text response so we can only fetch content from the pages root div
+        .then((text) =>
+          new window.DOMParser().parseFromString(text, 'text/html')
+        )
+        // insert the fetched content into the root div
+        .then((html) => {
+          this.root.innerHTML = html.querySelector(
+            this.fetchSelector
+          ).innerHTML;
+        })
+        // listen for errors and "redirect" the user if fetching doesn't happen
+        .catch((err) => {
+          console.error(err);
+          window.location = url;
+        })
+    );
   }
 
   beforePageChange(url, cb) {
-    if(isFunction(this.beforeChange)) {
+    if (isFunction(this.beforeChange)) {
       this.beforeChange(url, cb);
-    } else if(isFunction(cb)) {
+    } else if (isFunction(cb)) {
       cb();
     }
   }
 
   afterPageChange(url, cb) {
-    if(isFunction(this.beforeChange)) {
+    if (isFunction(this.beforeChange)) {
       this.afterChange(url, cb);
-    } else if(isFunction(cb)) {
+    } else if (isFunction(cb)) {
       cb();
     }
   }
 
   handlePopState(e) {
-    if(e.state && e.state.page && e.state.page.indexOf('#') == -1) {
+    if (e.state && e.state.page && e.state.page.indexOf('#') == -1) {
       const { page } = e.state;
       this.beforePageChange(page, () => {
         this.loadPage(page).then(() => {
@@ -114,7 +125,7 @@ class PageFetcher {
     var href = e.target.href;
 
     // do nothing if user is already on the page they clicked a link to
-    if(href === window.location.href) {
+    if (href === window.location.href) {
       return;
     }
 
@@ -126,4 +137,4 @@ class PageFetcher {
   }
 }
 
-module.exports = PageFetcher;
+export default PageFetcher;

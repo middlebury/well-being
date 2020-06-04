@@ -1,49 +1,26 @@
 {
   "name": "well-being",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp",
-    "build": "JEKYLL_ENV=production gulp build --production",
-    "deploy": "npm run build && gulp deploy",
-    "deploy:sandcat": "npm run build && npm run copy:sandcat",
-    "copy:sandcat": "cp -r _site/ /../../Volumes/middfiles/webroots/comm/well-being",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp dev",
+    "build": "JEKYLL_ENV=production gulp build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d _site -b site"
   },
   "private": true,
   "author": "Zeb Pykosz <zpykosz@middlebury.edu>",
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^10.0.0",
-    "beeper": "^2.0.0",
-    "browser-sync": "^2.17.5",
-    "browserify": "^16.3.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-if": "^2.0.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
-    "watchify": "^3.7.0"
+    "@middlebury/gulp-config": "^0.2.1",
+    "gh-pages": "^3.0.0",
+    "gulp": "^4.0.2"
   },
   "dependencies": {
     "animejs": "^1.1.1",
-    "promise": "^7.1.1",
-    "whatwg-fetch": "^2.0.1",
-    "yargs": "^6.5.0"
+    "promise-polyfill": "^8.1.3",
+    "unfetch": "^4.1.0"
   },
-  "resolutions": {
-    "lodash": "^4.17.14",
-    "minimatch": "^3.0.2",
-    "js-yaml": "^3.13.0",
-    "braces": "^2.3.1",
-    "lodash.template": "^4.5.0"
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none"
   }
 }

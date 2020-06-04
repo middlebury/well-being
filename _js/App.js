@@ -1,8 +1,8 @@
-const Swapper = require('./helpers/Swapper');
-const createPageFetcher = require('./createPageFetcher');
-const createSwapper = require('./createSwapper');
-const picVidSwap = require('./picture-video-swapper');
-const isTablet = require('./helpers/isTablet');
+import Swapper from './helpers/Swapper';
+import createPageFetcher from './createPageFetcher';
+import createSwapper from './createSwapper';
+import picVidSwap from './picture-video-swapper';
+import isTablet from './helpers/isTablet';
 
 const isLocation = (path) => window.location.pathname.indexOf(path) !== -1;
 
@@ -23,14 +23,14 @@ class App {
 
   addListeners() {
     window.addEventListener('hashchange', () => {
-      if(this.swapper) {
+      if (this.swapper) {
         this.swapper.open(window.location.hash.replace('#', ''));
       }
     });
   }
 
   initVideo() {
-    if(isTablet()) {
+    if (isTablet()) {
       var picture = document.getElementById('homepage-picture');
       picVidSwap(picture);
     }
@@ -41,23 +41,23 @@ class App {
 
     const { hash } = window.location;
 
-    if(hash) {
+    if (hash) {
       // open the hash id as we assume it's a topic
       this.swapper.open(hash.replace('#', ''));
     }
   }
 
   initHelpers() {
-    if(isLocation('overview')) {
+    if (isLocation('overview')) {
       this.initSwapper();
     } else {
       this.initVideo();
 
-      if(this.swapper instanceof Swapper) {
+      if (this.swapper instanceof Swapper) {
         this.swapper.destroy();
       }
     }
   }
 }
 
-module.exports = App;
+export default App;

@@ -1,19 +1,23 @@
-const anime = require('animejs');
-const Swapper = require('./helpers/Swapper');
-const isDesktop = require('./helpers/isDesktop');
+import anime from 'animejs';
+import Swapper from './helpers/Swapper';
+import isDesktop from './helpers/isDesktop';
 
-module.exports = function createSwapper() {
+export default function createSwapper() {
   return new Swapper({
     itemsContainer: '.topics-list',
     navItems: '.topics-nav__anchor',
     items: '.topic-article',
     beforeOpen: (id, isNext, cb) => {
-      window.history.pushState({
-        page: null,
-        hash: id
-      }, id, '#' + id);
+      window.history.pushState(
+        {
+          page: null,
+          hash: id
+        },
+        id,
+        '#' + id
+      );
 
-      if(!isDesktop()) {
+      if (!isDesktop()) {
         return cb();
       }
 
@@ -27,7 +31,7 @@ module.exports = function createSwapper() {
       });
     },
     afterOpen: (id, isNext) => {
-      if(isDesktop()) {
+      if (isDesktop()) {
         return anime({
           targets: '.topic-articles',
           translateY: isNext ? [-20, 0] : [20, 0],
@@ -40,4 +44,4 @@ module.exports = function createSwapper() {
       document.getElementById('root').scrollIntoView();
     }
   });
-};
+}

@@ -1,22 +1,16 @@
 # Middlebury Well-Being
 
 ## Requirements
+
 - [Jekyll](http://jekyllrb.com/) `sudo gem install jekyll`
-- [NodeJS](https://nodejs.org/en/) v6.4+
-- [Yarn](https://yarnpkg.com/en/docs/install) (optional) `npm install --global yarn`
+- [NodeJS](https://nodejs.org/en/) >= 12.x
 
 ## Getting started
 
-Install Node dependencies with NPM or yarn:
+Install Node dependencies with NPM:
 
 ```
 npm install
-```
-
-or
-
-```
-yarn
 ```
 
 Run gulp to launch browser sync server and automatic Jekyll rebuilds

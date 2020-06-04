@@ -1,1 +1,1 @@
-module.exports = () => window.matchMedia('(min-width: 1024px)').matches;
+export default () => window.matchMedia('(min-width: 1024px)').matches;

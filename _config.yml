@@ -1,6 +1,6 @@
 title: Middlebury Well-Being
 description: Find the opportunities, resources, and support to help you engage in your well-being at Middlebury.
-baseurl: "/well-being"
+baseurl: '/well-being'
 suggestions_url: https://forms.middlebury.edu/offices/campuslife/well-being
 
 markdown: kramdown
@@ -10,4 +10,4 @@ exclude:
   - gulpfile.js
   - yarn.lock
   - README.md
-  - "*.log"
+  - '*.log'

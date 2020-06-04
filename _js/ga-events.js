@@ -1,4 +1,4 @@
-var forEach = require('./helpers/forEach');
+import forEach from './helpers/forEach';
 
 var links = document.querySelectorAll('[data-ga-event]');
 
@@ -16,12 +16,12 @@ function handleLinkClick(event) {
     eventLabel
   };
 
-  if(typeof window.ga !== 'undefined') {
+  if (typeof window.ga !== 'undefined') {
     return window.ga('send', config);
   }
   console.log('logging GA event', config);
 }
 
-forEach(links, link => {
+forEach(links, (link) => {
   link.addEventListener('click', handleLinkClick);
 });

@@ -2,10 +2,9 @@
  * Swaps a <picture> element for a <video> based on the picture data-video-* attributes.
  * @param  {Element} picture - the picture DOM element
  */
-module.exports = function(picture) {
-
+export default function (picture) {
   // make sure picture element is passed
-  if(!picture) {
+  if (!picture) {
     return;
   }
 
@@ -25,7 +24,7 @@ module.exports = function(picture) {
   var config = {};
 
   // append <source> elements to the video tag
-  sources.forEach(src => {
+  sources.forEach((src) => {
     // create a source element
     var source = document.createElement('source');
 
@@ -43,12 +42,12 @@ module.exports = function(picture) {
   try {
     var dataConfig = picture.getAttribute('data-video-config');
     var config = JSON.parse(dataConfig);
-  } catch(e) {
+  } catch (e) {
     console.log(e);
   }
 
   // loop through the config object which was hopefully populated by JSON.parse
-  for(var key in config) {
+  for (var key in config) {
     // set each attribute on the video tag
     video[key] = config[key];
   }
@@ -58,4 +57,4 @@ module.exports = function(picture) {
 
   // insert the new video element into the original picture element's parent element
   container.appendChild(video);
-};
+}

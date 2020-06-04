@@ -1,4 +1,4 @@
-const forEach = require('./forEach');
+import forEach from './forEach';
 
 class Swapper {
   constructor({
@@ -14,7 +14,7 @@ class Swapper {
     closedContainerClass = 'swapper-container--is-closed',
     bodyClass = 'has-swapper',
     openBodyClass = 'swapper--is-open',
-    closedBodyClass = 'swapper--is-closed',
+    closedBodyClass = 'swapper--is-closed'
   }) {
     this.navItems = document.querySelectorAll(navItems);
     this.items = document.querySelectorAll(items);
@@ -43,7 +43,7 @@ class Swapper {
 
     // store a list of ids so we can check if an item is before another item
     this.ids = [];
-    forEach(this.items, item => this.ids.push(item.id));
+    forEach(this.items, (item) => this.ids.push(item.id));
 
     // bind click listeners
     this.handleNavItemClick = this.handleNavItemClick.bind(this);
@@ -114,7 +114,7 @@ class Swapper {
   }
 
   open(id) {
-    if(!id || id === this.id) return;
+    if (!id || id === this.id) return;
 
     const isNext = this.isIdNext(id);
 
@@ -149,7 +149,7 @@ class Swapper {
   close() {
     const elem = this.getActiveItem();
 
-    if(elem) {
+    if (elem) {
       elem.classList.remove(this.activeItemClass);
     }
 
@@ -173,7 +173,7 @@ class Swapper {
   removeActiveNavItemClass() {
     const elem = this.getActiveNavItem();
 
-    if(elem) {
+    if (elem) {
       elem.classList.remove(this.activeNavItemClass);
     }
   }
@@ -191,7 +191,7 @@ class Swapper {
   next() {
     const nextId = this.ids[this.activeIdIndex + 1];
 
-    if(nextId) {
+    if (nextId) {
       return this.open(nextId);
     }
 
@@ -203,7 +203,7 @@ class Swapper {
   prev() {
     const prevId = this.ids[this.activeIdIndex - 1];
 
-    if(prevId) {
+    if (prevId) {
       return this.open(prevId);
     }
 
@@ -213,4 +213,4 @@ class Swapper {
   }
 }
 
-module.exports = Swapper;
+export default Swapper;
