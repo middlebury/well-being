@@ -3,22 +3,28 @@
 ## Requirements
 
 - [Jekyll](http://jekyllrb.com/) `sudo gem install jekyll`
-- [NodeJS](https://nodejs.org/en/) >= 12.x
+- [NodeJS](https://nodejs.org/en/) v12+
 
-## Getting started
+## Quick start
 
-Install Node dependencies with NPM:
+```bash
+# clone your repo then open terminal in its folder
 
-```
+# install npm packages
 npm install
-```
 
-Run gulp to launch browser sync server and automatic Jekyll rebuilds
-
-```
+# start local dev server
 npm start
 ```
 
-## Build for production
+This will run browser sync server on `http://localhost:3000`. (Browser sync will automatically set it to a different port if you have something running on it. Check what gets output in terminal for the exact URL.)
 
-**TODO**
+## Deployment
+
+```bash
+npm run deploy
+```
+
+1. This will compile jekyll, process and minify CSS and JS, and compress images
+2. It will commit the contents of the `_site` directory to the `site` branch and push it to GitHub
+3. IT has automated scripts to deploy the contents of the `site` branch on change. Your changes should now be live at its assigned domain.
