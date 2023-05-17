@@ -3,7 +3,7 @@
 ## Requirements
 
 - [Jekyll](http://jekyllrb.com/) `sudo gem install jekyll`
-- [NodeJS](https://nodejs.org/en/) v12+
+- [NodeJS](https://nodejs.org/en/) v18+
 
 ## Quick start
 

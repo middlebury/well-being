@@ -9,7 +9,7 @@
   "private": true,
   "author": "Zeb Pykosz <zpykosz@middlebury.edu>",
   "devDependencies": {
-    "@middlebury/gulp-config": "^0.3.4",
+    "@middlebury/gulp-config": "^1.0.0",
     "gh-pages": "^3.0.0",
     "gulp": "^4.0.2"
   },
